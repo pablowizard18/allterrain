@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Terrain SMA | Construcción de Vanguardia con Paneles SIP</title>
+    
+    <!-- Tipografías Premium de Arquitectura y Diseño -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para iconos técnicos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* 1. RESET Y VARIABLES */
+        :root {
+            --bg-deep: #0b0d11;
+            --bg-card: #14171f;
+            --bg-card-hover: #1b202b;
+            --accent: #f97316; /* Naranja de obra/seguridad técnico */
+            --accent-hover: #ea580c;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --glass: rgba(20, 23, 31, 0.7);
+            --border: rgba(255, 255, 255, 0.05);
+            --border-highlight: rgba(249, 115, 22, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* 2. NAVBAR CON EFECTO FROSTED GLASS */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: -1px;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-nav {
+            background-color: var(--accent);
+            color: var(--bg-deep) !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .btn-nav:hover {
+            background-color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* 3. HERO SECTION (La Portada de Alto Impacto) */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 20px 80px 20px;
+            background: linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), 
+                        url('http://googleusercontent.com/image_collection/image_retrieval/13148757387784025356_0') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, var(--bg-deep), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid var(--border-highlight);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(40px, 6vw, 72px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-deep);
+            padding: 16px 35px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid var(--border);
+            padding: 16px 35px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* 4. SECCIÓN VENTAJAS DEL SISTEMA SIP (Grilla Estructural) */
+        .system-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(32px, 4vw, 48px);
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 span {
+            color: var(--accent);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 45px 35px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advantage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s ease;
+        }
+
+        .advantage-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-5px);
+            border-color: var(--border-highlight);
+        }
+
+        .advantage-card:hover::before {
+            height: 100%;
+        }
+
+        .advantage-icon {
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 25px;
+            background: rgba(249, 115, 22, 0.05);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 1px solid var(--border-highlight);
+        }
+
+        .advantage-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .advantage-card p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* 5. SECCIÓN BLEED (Velocidad de construcción en seco) */
+        .bleed-container {
+            display: flex;
+            background-color: var(--bg-card);
+            margin: 80px 0;
+            min-height: 500px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .bleed-content {
+            flex: 1;
+            min-width: 320px;
+            padding: 80px 5%;
+        }
+
+        .bleed-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 36px;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .bleed-content h3 span {
+            color: var(--accent);
+        }
+
+        .bleed-content p {
+            color: var(--text-muted);
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .bleed-image {
+            flex: 1;
+            min-width: 320px;
+            height: 550px;
+            background: url('http://googleusercontent.com/image_collection/image_retrieval/17803325326728021493_0') no-repeat center center/cover;
+        }
+
+        /* 6. COTIZADOR INTERACTIVO (Formulario WhatsApp Avanzado) */
+        .calculator-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, var(--bg-deep) 0%, #11141a 100%);
+        }
+
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .bleed-container {
+                flex-direction: column-reverse;
+            }
+            .bleed-image {
+                height: 350px;
+                width: 100%;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            background: #0f1116;
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+        }
+
+        .checkbox-group {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-label-main {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            user-select: none;
+            background: #0f1116;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .custom-checkbox input {
+            display: none;
+        }
+
+        .custom-checkbox i {
+            color: var(--text-muted);
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .custom-checkbox input:checked + i {
+            color: var(--accent);
+        }
+
+        .custom-checkbox input:checked + i::before {
+            content: "\f14a"; /* Icono de check seleccionado */
+        }
+
+        .custom-checkbox:hover {
+            border-color: var(--border-highlight);
+            background: rgba(249, 115, 22, 0.02);
+        }
+
+        .btn-submit {
+            background: var(--accent);
+            color: var(--bg-deep);
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.15);
+        }
+
+        .btn-submit:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        /* 7. OBRAS EN MARCHA (Galería y Barrios) */
+        .projects-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .neighborhoods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-highlight);
+        }
+
+        .project-info {
+            padding: 30px;
+        }
+
+        .project-tag {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .project-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* 8. FOOTER */
+        footer {
+            background: #07080b;
+            padding: 80px 20px 40px 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand h3 span {
+            color: var(--accent);
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .footer-links h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--accent);
+            color: var(--bg-deep);
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">ALL <span>TERRAIN</span> SMA</a>
+            <ul class="nav-links">
+                <li><a href="#sistema">Sistema SIP</a></li>
+                <li><a href="#obras">Obras</a></li>
+                <li><a href="#cotizador">Presupuesto</a></li>
+                <li><a href="#cotizador" class="btn-nav">Contacto WhatsApp</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fa-solid fa-mountain-sun"></i> Construcción Patagónica Sustentable
+                </div>
+                <h1>Montaje Eficiente de <span>Paneles SIP</span></h1>
+                <p>Especialistas en estructuras térmicas de alta precisión en San Martín de los Andes. Reducimos los tiempos de obra en un 60% para proteger tu proyecto del invierno.</p>
+                <div class="cta-group">
+                    <a href="#cotizador" class="btn-primary">
+                        <i class="fa-solid fa-calculator"></i> Cotizar Mi Obra
+                    </a>
+                    <a href="#sistema" class="btn-secondary">
+                        <i class="fa-solid fa-circle-info"></i> Conocer el Sistema
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN VENTAJAS -->
+        <section class="system-section" id="sistema">
+            <div class="section-header">
+                <h2>¿Por qué construir con <span>Sistema SIP</span>?</h2>
+                <p>La alternativa sustentable y moderna que supera a la obra tradicional húmeda frente al riguroso clima del sur.</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fa-solid fa-temperature-arrow-down"></i>
+                    </div>
+                    <h3>Eficiencia Térmica Extrema</h3>
+                    <p>La máxima aislación del núcleo de poliuretano ahorra hasta un 60% en calefacción. Ideal para los inviernos crudos de San Martín de los Andes.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Velocidad de Montaje</h3>
+                    <p>El 80% de la estructura de un kit SIP se levanta en tan solo 3 semanas. La nieve o el barro ya no retrasan los plazos de obra.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h3>Obra Limpia y Precisa</h3>
+                    <p>Estructuras milimétricas sin desperdicios en terreno. Respetamos y cuidamos el ecosistema natural de la cordillera.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN BLEED (AVANCE RÁPIDO) -->
+        <section class="bleed-container">
+            <div class="bleed-content">
+                <h3>Montaje de Kits SIP <br><span>Sin Frenar por el Clima</span></h3>
+                <p>En All Terrain dominamos la geografía de montaña. Ya sea en pendientes empinadas o en medio de las heladas, nuestros equipos coordinan logística y grúa para ensamblar las paredes y techos reforzados en tiempos récord.</p>
+                <p>Trabajamos integrados con los mejores proveedores de kits estructurales (como TWIT SIP) para garantizar un encastre perfecto, reduciendo el riesgo de filtraciones de aire frío.</p>
+            </div>
+            <div class="bleed-image"></div>
+        </section>
+
+        <!-- OBRAS EN MARCHA -->
+        <section class="projects-section" id="obras">
+            <div class="section-header">
+                <h2>Proyectos en <span>San Martín de los Andes</span></h2>
+                <p>Estamos presentes en los barrios de mayor crecimiento de la zona cordillerana.</p>
+            </div>
+            <div class="neighborhoods-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="project-tag">Obra Activa</span>
+                        <h3>Las Marías del Valle</h3>
+                        <p>Montaje estructural de vivienda familiar de 145m² con paneles SIP TWIT de alta densidad. Terminación en herrería moderna y revestimiento térmico exterior.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="project-tag">Estructura Lista</span>
+                        <h3>Kaleuche Alto</h3>
+                        <p>Proyecto residencial integrado en pendiente boscosa. Refuerzo de vigas para soportar cargas extremas de nieve en invierno patagónico.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="project-tag">Finalizado</span>
+                        <h3>Chapelco Golf & Resort</h3>
+                        <p>Diseño premium con excelente desempeño acústico y térmico. Servicio llave en mano que incluye climatización por suelo radiante y revestimiento de madera local.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COTIZADOR INTERACTIVO / WHATSAPP -->
+        <section class="calculator-section" id="cotizador">
+            <div class="section-header">
+                <h2>Cotizá tu Proyecto <span>Al Instante</span></h2>
+                <p>Completá las variables básicas de tu terreno y envianos la configuración directamente por WhatsApp para recibir un análisis personalizado.</p>
+            </div>
+            <div class="calculator-container">
+                <form id="quoteForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="zona">Barrio / Zona de Obra</label>
+                            <input type="text" id="zona" class="form-control" placeholder="Ej. Kaleuche, Las Marías, Alihuen..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="superficie">Superficie a Construir (m²)</label>
+                            <input type="number" id="superficie" class="form-control" placeholder="Ej. 120" required min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="ambientes">Habitaciones / Ambientes</label>
+                            <input type="text" id="ambientes" class="form-control" placeholder="Ej. 2 habs, 2 baños..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="kit">Estado del Kit SIP</label>
+                            <select id="kit" class="form-control">
+                                <option value="Necesito asesoramiento y provisión del Kit">Necesito provisión y asesoramiento del Kit</option>
+                                <option value="Ya tengo el Kit comprado (Solo Montaje)">Ya tengo el Kit comprado (Solo mano de obra)</option>
+                            </select>
+                        </div>
+                        <div class="checkbox-group">
+                            <span class="checkbox-label-main">Servicios Complementarios Adicionales</span>
+                            <div class="services-list">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="services" value="Herreria">
+                                    <i class="fa-regular fa-square"></i> Herrería de Obra
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="services" value="Electricidad">
+                                    <i class="fa-regular fa-square"></i> Instalaciones Eléctricas
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="services" value="Climatizacion">
+                                    <i class="fa-regular fa-square"></i> Climatización / HVAC
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="services" value="Revestimientos">
+                                    <i class="fa-regular fa-square"></i> Revestimientos en Madera
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-submit" onclick="sendQuoteToWhatsApp()">
+                        <i class="fa-brands fa-whatsapp"></i> Enviar Presupuesto por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>ALL <span>TERRAIN</span> SMA</h3>
+                <p>Especialistas en construcción rápida y eficiente en San Martín de los Andes. Innovación estructural para habitar el sur de forma inteligente.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/allterrain.sma/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-compass"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#sistema">Sistema SIP</a></li>
+                    <li><a href="#obras">Obras en marcha</a></li>
+                    <li><a href="#cotizador">Pedir Presupuesto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contacto Frecuente</h4>
+                <ul>
+                    <li><i class="fa-solid fa-envelope" style="color: var(--accent); margin-right: 8px;"></i> allterrain.sma@gmail.com</li>
+                    <li><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 8px;"></i> +54 9 11 5658-6505</li>
+                    <li><i class="fa-solid fa-location-dot" style="color: var(--accent); margin-right: 8px;"></i> San Martín de los Andes, Neuquén</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 All Terrain SMA. Todos los derechos reservados.</p>
+            <p>Hecho para integración rápida con STITCH</p>
+        </div>
+    </footer>
+
+    <!-- SISTEMA DE ENVÍO AUTOMÁTICO A WHATSAPP -->
+    <script>
+        function sendQuoteToWhatsApp() {
+            // Número oficial que tienen en sus posteos
+            const phone = "5491156586505";
+            
+            const zona = document.getElementById('zona').value;
+            const superficie = document.getElementById('superficie').value;
+            const ambientes = document.getElementById('ambientes').value;
+            const kit = document.getElementById('kit').value;
+
+            // Validación rápida
+            if (!zona || !superficie || !ambientes) {
+                alert("Por favor completa los campos principales de zona, m² y ambientes.");
+                return;
+            }
+
+            // Recolectar checkboxes seleccionados
+            const checkedServices = [];
+            document.querySelectorAll('input[name="services"]:checked').forEach((checkbox) => {
+                checkedServices.push(checkbox.value);
+            });
+
+            const serviciosTexto = checkedServices.length > 0 ? checkedServices.join(', ') : 'Ninguno seleccionado';
+
+            // Formatear mensaje para que llegue prolijo al celular de la empresa
+            const text = `*¡Hola All Terrain SMA!* Vengo de la web y quiero cotizar una obra:%0A%0A` +
+                         `📍 *Zona de Obra:* ${zona}%0A` +
+                         `📏 *Superficie:* ${superficie} m²%0A` +
+                         `🚪 *Ambientes:* ${ambientes}%0A` +
+                         `📦 *Estado del Kit SIP:* ${kit}%0A` +
+                         `🛠️ *Servicios Extra:* ${serviciosTexto}%0A%0A` +
+                         `_¿Podrían confirmarme disponibilidad y presupuesto estimado?_`;
+
+            // Redireccionar
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
