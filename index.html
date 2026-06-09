@@ -237,7 +237,7 @@
             transform: translateY(-3px);
         }
 
-        /* 4. SECCIÓN VENTAJAS DEL SISTEMA SIP (Grilla Estructural) */
+        /* 4. SECCIÓN VENTAJAS DEL SISTEMA SIP con Efecto Revelado */
         .system-section {
             padding: 100px 20px;
             max-width: 1200px;
@@ -276,46 +276,82 @@
         .advantage-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 45px 35px;
-            border-radius: 16px;
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            overflow: hidden; /* Corta el desborde del zoom de la foto */
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
-            overflow: hidden;
-        }
-
-        .advantage-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: var(--accent);
-            transition: height 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .advantage-card:hover {
             background: var(--bg-card-hover);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--border-highlight);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .advantage-card:hover::before {
+        /* Contenedor de la Imagen */
+        .advantage-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            background-color: #0b0d11;
+        }
+
+        /* Imagen Borrosa por defecto */
+        .advantage-img {
+            width: 100%;
             height: 100%;
+            object-fit: cover;
+            filter: blur(8px) brightness(0.65) grayscale(15%);
+            transform: scale(1.15); /* Previene bordes blancos por el blur */
+            transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* Al pasar el mouse, se quita el blur y se aclara */
+        .advantage-card:hover .advantage-img {
+            filter: blur(0px) brightness(0.95) grayscale(0%);
+            transform: scale(1.02); /* Suave zoom out */
+        }
+
+        /* Cuerpo de la tarjeta */
+        .advantage-card-body {
+            padding: 35px 30px;
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Icono superpuesto flotante 3D */
         .advantage-icon {
-            font-size: 32px;
+            font-size: 22px;
             color: var(--accent);
-            margin-bottom: 25px;
-            background: rgba(249, 115, 22, 0.05);
-            width: 70px;
-            height: 70px;
+            background: #14171f;
+            width: 58px;
+            height: 58px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 12px;
+            border-radius: 14px;
             border: 1px solid var(--border-highlight);
+            margin-top: -64px; /* Flota justo en el borde de la imagen */
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .advantage-card:hover .advantage-icon {
+            background: var(--accent);
+            color: var(--bg-deep);
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
         }
 
         .advantage-card h3 {
@@ -327,7 +363,7 @@
 
         .advantage-card p {
             color: var(--text-muted);
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.6;
         }
 
@@ -604,7 +640,7 @@
             line-height: 1.5;
         }
 
-        /* 8. FOOTER */
+        /* 8. FOOTER ENRIQUECIDO CON LOGO */
         footer {
             background: #07080b;
             padding: 80px 20px 40px 20px;
@@ -620,21 +656,28 @@
             margin-bottom: 50px;
         }
 
-        .footer-brand h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 24px;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 15px;
+        .footer-brand-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .footer-brand h3 span {
-            color: var(--accent);
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
         }
 
-        .footer-brand p {
+        .footer-logo {
+            max-height: 55px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 10px rgba(249, 115, 22, 0.15));
+        }
+
+        .footer-brand-wrapper p {
             color: var(--text-muted);
             font-size: 15px;
+            line-height: 1.6;
         }
 
         .footer-links h4 {
@@ -665,7 +708,7 @@
         .social-icons {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .social-icons a {
@@ -709,7 +752,6 @@
     <!-- NAVBAR -->
     <header>
         <div class="nav-container">
-            <!-- VOLVEMOS AL LOGO DE TEXTO ORIGINAL -->
             <a href="#" class="logo">ALL <span>TERRAIN</span> SMA</a>
             <ul class="nav-links">
                 <li><a href="#sistema">Sistema SIP</a></li>
@@ -739,34 +781,59 @@
             </div>
         </section>
 
-        <!-- SECCIÓN VENTAJAS -->
+        <!-- SECCIÓN VENTAJAS (CON FOTOS INTERACTIVAS REVELADAS) -->
         <section class="system-section" id="sistema">
             <div class="section-header">
                 <h2>¿Por qué construir con <span>Sistema SIP</span>?</h2>
                 <p>La alternativa sustentable y moderna que supera a la obra tradicional húmeda frente al riguroso clima del sur.</p>
             </div>
             <div class="advantages-grid">
+                
+                <!-- Tarjeta 1: foto1.png (Eficiencia Térmica) -->
                 <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fa-solid fa-temperature-arrow-down"></i>
+                    <div class="advantage-img-wrapper">
+                        <img src="images/allterrain/foto1.png" alt="Eficiencia Térmica Extrema" class="advantage-img"
+                             onerror="if(!this.src.endsWith('.jpg')){this.src=this.src.replace('.png','.jpg');}">
                     </div>
-                    <h3>Eficiencia Térmica Extrema</h3>
-                    <p>La máxima aislación del núcleo de poliuretano ahorra hasta un 60% en calefacción. Ideal para los inviernos crudos de San Martín de los Andes.</p>
+                    <div class="advantage-card-body">
+                        <div class="advantage-icon">
+                            <i class="fa-solid fa-temperature-arrow-down"></i>
+                        </div>
+                        <h3>Eficiencia Térmica Extrema</h3>
+                        <p>La máxima aislación del núcleo de poliuretano ahorra hasta un 60% en calefacción. Ideal para los inviernos crudos de San Martín de los Andes.</p>
+                    </div>
                 </div>
+
+                <!-- Tarjeta 2: foto2.png (Velocidad de Montaje) -->
                 <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fa-solid fa-bolt"></i>
+                    <div class="advantage-img-wrapper">
+                        <img src="images/allterrain/foto2.png" alt="Velocidad de Montaje" class="advantage-img"
+                             onerror="if(!this.src.endsWith('.jpg')){this.src=this.src.replace('.png','.jpg');}">
                     </div>
-                    <h3>Velocidad de Montaje</h3>
-                    <p>El 80% de la estructura de un kit SIP se levanta en tan solo 3 semanas. La nieve o el barro ya no retrasan los plazos de obra.</p>
+                    <div class="advantage-card-body">
+                        <div class="advantage-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3>Velocidad de Montaje</h3>
+                        <p>El 80% de la estructura de un kit SIP se levanta en tan solo 3 semanas. La nieve o el barro ya no retrasan los plazos de obra.</p>
+                    </div>
                 </div>
+
+                <!-- Tarjeta 3: foto3.png (Obra Limpia y Precisa) -->
                 <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fa-solid fa-broom"></i>
+                    <div class="advantage-img-wrapper">
+                        <img src="images/allterrain/foto3.png" alt="Obra Limpia y Precisa" class="advantage-img"
+                             onerror="if(!this.src.endsWith('.jpg')){this.src=this.src.replace('.png','.jpg');}">
                     </div>
-                    <h3>Obra Limpia y Precisa</h3>
-                    <p>Estructuras milimétricas sin desperdicios en terreno. Respetamos y cuidamos el ecosistema natural de la cordillera.</p>
+                    <div class="advantage-card-body">
+                        <div class="advantage-icon">
+                            <i class="fa-solid fa-broom"></i>
+                        </div>
+                        <h3>Obra Limpia y Precisa</h3>
+                        <p>Estructuras milimétricas sin desperdicios en terreno. Respetamos y cuidamos el ecosistema natural de la cordillera.</p>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -929,12 +996,13 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-grid">
-            <div class="footer-brand">
-                <h3>ALL <span>TERRAIN</span> SMA</h3>
+            <div class="footer-brand-wrapper">
+                <div class="footer-logo-container">
+                    <img src="images/allterrain/logo.png" alt="All Terrain SMA" class="footer-logo">
+                </div>
                 <p>Especialistas en construcción rápida y eficiente en San Martín de los Andes. Innovación estructural para habitar el sur de forma inteligente.</p>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/allterrain.sma/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fa-solid fa-compass"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -949,7 +1017,7 @@
                 <h4>Contacto Frecuente</h4>
                 <ul>
                     <li><i class="fa-solid fa-envelope" style="color: var(--accent); margin-right: 8px;"></i> allterrain.sma@gmail.com</li>
-                    <li><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 8px;"></i> +54 9 11 5658-6505</li>
+                    <li><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 8px;"></i> +54 9 11 6985-9241</li>
                     <li><i class="fa-solid fa-location-dot" style="color: var(--accent); margin-right: 8px;"></i> San Martín de los Andes, Neuquén</li>
                 </ul>
             </div>
@@ -963,8 +1031,8 @@
     <!-- SISTEMA DE ENVÍO AUTOMÁTICO A WHATSAPP -->
     <script>
         function sendQuoteToWhatsApp() {
-            // Número oficial que tienen en sus posteos
-            const phone = "5491156586505";
+            // Número oficial actualizado de All Terrain
+            const phone = "5491169859241";
             
             const zona = document.getElementById('zona').value;
             const superficie = document.getElementById('superficie').value;
