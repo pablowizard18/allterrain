@@ -60,7 +60,7 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -76,6 +76,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
         }
 
         .logo span {
@@ -123,8 +129,12 @@
             align-items: center;
             justify-content: center;
             padding: 140px 20px 80px 20px;
-            background: linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), 
-                        url('http://googleusercontent.com/image_collection/image_retrieval/13148757387784025356_0') no-repeat center center/cover;
+            background-color: var(--bg-deep);
+            background-image: linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), 
+                              url('images/obras1.jpg'); /* FOTO 1: Fondo Principal */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
             overflow: hidden;
         }
 
@@ -365,7 +375,11 @@
             flex: 1;
             min-width: 320px;
             height: 550px;
-            background: url('http://googleusercontent.com/image_collection/image_retrieval/17803325326728021493_0') no-repeat center center/cover;
+            background-color: #1a1e26;
+            background-image: url('images/obras2.jpg'); /* FOTO 2: Montaje / Acción */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
         }
 
         /* 6. COTIZADOR INTERACTIVO (Formulario WhatsApp Avanzado) */
@@ -517,7 +531,7 @@
             box-shadow: 0 15px 25px rgba(255, 255, 255, 0.1);
         }
 
-        /* 7. OBRAS EN MARCHA (Galería y Barrios) */
+        /* 7. OBRAS EN MARCHA (Galería y Barrios con Imágenes de Portafolio) */
         .projects-section {
             padding: 100px 20px;
             max-width: 1200px;
@@ -537,6 +551,27 @@
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background-color: #1a1e26;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image-container img {
+            transform: scale(1.05);
         }
 
         .project-card:hover {
@@ -545,7 +580,11 @@
         }
 
         .project-info {
-            padding: 30px;
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-tag {
@@ -568,6 +607,7 @@
         .project-card p {
             color: var(--text-muted);
             font-size: 15px;
+            line-height: 1.5;
         }
 
         /* 8. FOOTER */
@@ -675,7 +715,13 @@
     <!-- NAVBAR -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">ALL <span>TERRAIN</span> SMA</a>
+            <a href="#" class="logo">
+                <!-- SISTEMA INTELIGENTE DE FALLBACK PARA EL LOGO: -->
+                <!-- Intenta cargar images/logo.png; si no, prueba images/logo.jpg; si ninguno sirve, cae en texto -->
+                <img src="images/logo.png" id="logo-img" alt="All Terrain SMA Logo" 
+                     onerror="this.onerror=function(){this.style.display='none'; document.getElementById('logo-text').style.display='inline';}; this.src='images/logo.jpg';">
+                <span id="logo-text" style="display: none;">ALL <span>TERRAIN</span> SMA</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#sistema">Sistema SIP</a></li>
                 <li><a href="#obras">Obras</a></li>
@@ -746,32 +792,63 @@
             <div class="bleed-image"></div>
         </section>
 
-        <!-- OBRAS EN MARCHA -->
+        <!-- OBRAS EN MARCHA (CON GALERÍA ACTIVA) -->
         <section class="projects-section" id="obras">
             <div class="section-header">
                 <h2>Proyectos en <span>San Martín de los Andes</span></h2>
                 <p>Estamos presentes en los barrios de mayor crecimiento de la zona cordillerana.</p>
             </div>
             <div class="neighborhoods-grid">
+                <!-- Tarjeta 1: OBRAS3 -->
                 <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/obras3.jpg" alt="Obra en Las Marías del Valle" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                    </div>
                     <div class="project-info">
-                        <span class="project-tag">Obra Activa</span>
-                        <h3>Las Marías del Valle</h3>
-                        <p>Montaje estructural de vivienda familiar de 145m² con paneles SIP TWIT de alta densidad. Terminación en herrería moderna y revestimiento térmico exterior.</p>
+                        <div>
+                            <span class="project-tag">Obra Activa</span>
+                            <h3>Las Marías del Valle</h3>
+                            <p>Montaje estructural de vivienda familiar de 145m² con paneles SIP de alta densidad. Terminación en herrería moderna y revestimiento térmico exterior.</p>
+                        </div>
                     </div>
                 </div>
+                <!-- Tarjeta 2: OBRAS4 -->
                 <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/obras4.jpg" alt="Obra en Kaleuche" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                    </div>
                     <div class="project-info">
-                        <span class="project-tag">Estructura Lista</span>
-                        <h3>Kaleuche Alto</h3>
-                        <p>Proyecto residencial integrado en pendiente boscosa. Refuerzo de vigas para soportar cargas extremas de nieve en invierno patagónico.</p>
+                        <div>
+                            <span class="project-tag">Estructura Lista</span>
+                            <h3>Kaleuche Alto</h3>
+                            <p>Proyecto residencial integrado en pendiente boscosa. Refuerzo de vigas para soportar cargas extremas de nieve en invierno patagónico.</p>
+                        </div>
                     </div>
                 </div>
+                <!-- Tarjeta 3: OBRAS5 -->
                 <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/obras5.jpg" alt="Obra en Chapelco Golf" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                    </div>
                     <div class="project-info">
-                        <span class="project-tag">Finalizado</span>
-                        <h3>Chapelco Golf & Resort</h3>
-                        <p>Diseño premium con excelente desempeño acústico y térmico. Servicio llave en mano que incluye climatización por suelo radiante y revestimiento de madera local.</p>
+                        <div>
+                            <span class="project-tag">Finalizado</span>
+                            <h3>Chapelco Golf & Resort</h3>
+                            <p>Diseño premium con excelente desempeño acústico y térmico. Servicio llave en mano que incluye climatización por suelo radiante y revestimiento de madera local.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta 4: OBRAS6 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/obras5.jpg" alt="Obra en Alihuen" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-tag">Montaje Finalizado</span>
+                            <h3>Barrio Alihuen</h3>
+                            <p>Estructura de dos plantas con kit optimizado para el ahorro de energía en calefacción. Obra limpia ejecutada respetando los árboles nativos del terreno.</p>
+                        </div>
                     </div>
                 </div>
             </div>
