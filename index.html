@@ -60,7 +60,7 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -76,12 +76,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .logo img {
-            height: 45px;
-            width: auto;
-            object-fit: contain;
         }
 
         .logo span {
@@ -107,18 +101,18 @@
             color: var(--accent);
         }
 
-        .btn-nav {
-            background-color: var(--accent);
-            color: var(--bg-deep) !important;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 700 !important;
-            transition: all 0.3s ease !important;
-        }
-
-        .btn-nav:hover {
-            background-color: #fff;
-            transform: translateY(-2px);
+        /* RESPONSIVE PARA EL NAVBAR (Celulares) */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Oculta los links en celular */
+            }
+            .nav-container {
+                justify-content: center; /* Centra el logo de forma limpia */
+                padding: 15px 20px;
+            }
+            .logo {
+                font-size: 20px; /* Un pelín más chico para pantallas angostas */
+            }
         }
 
         /* 3. HERO SECTION (La Portada de Alto Impacto) */
@@ -131,7 +125,7 @@
             padding: 140px 20px 80px 20px;
             background-color: var(--bg-deep);
             background-image: linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), 
-                              url('images/obras1.jpg'); /* FOTO 1: Fondo Principal */
+                              url('images/allterrain/obras1.png'); /* FOTO 1: Portada */
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -376,7 +370,7 @@
             min-width: 320px;
             height: 550px;
             background-color: #1a1e26;
-            background-image: url('images/obras2.jpg'); /* FOTO 2: Montaje / Acción */
+            background-image: url('images/allterrain/obras2.png'); /* FOTO 2: Acción / Montaje */
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -715,18 +709,12 @@
     <!-- NAVBAR -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">
-                <!-- SISTEMA INTELIGENTE DE FALLBACK PARA EL LOGO: -->
-                <!-- Intenta cargar images/logo.png; si no, prueba images/logo.jpg; si ninguno sirve, cae en texto -->
-                <img src="images/logo.png" id="logo-img" alt="All Terrain SMA Logo" 
-                     onerror="this.onerror=function(){this.style.display='none'; document.getElementById('logo-text').style.display='inline';}; this.src='images/logo.jpg';">
-                <span id="logo-text" style="display: none;">ALL <span>TERRAIN</span> SMA</span>
-            </a>
+            <!-- VOLVEMOS AL LOGO DE TEXTO ORIGINAL -->
+            <a href="#" class="logo">ALL <span>TERRAIN</span> SMA</a>
             <ul class="nav-links">
                 <li><a href="#sistema">Sistema SIP</a></li>
                 <li><a href="#obras">Obras</a></li>
                 <li><a href="#cotizador">Presupuesto</a></li>
-                <li><a href="#cotizador" class="btn-nav">Contacto WhatsApp</a></li>
             </ul>
         </div>
     </header>
@@ -792,7 +780,7 @@
             <div class="bleed-image"></div>
         </section>
 
-        <!-- OBRAS EN MARCHA (CON GALERÍA ACTIVA) -->
+        <!-- OBRAS EN MARCHA (CON GALERÍA ACTIVA 100% REAL) -->
         <section class="projects-section" id="obras">
             <div class="section-header">
                 <h2>Proyectos en <span>San Martín de los Andes</span></h2>
@@ -802,7 +790,7 @@
                 <!-- Tarjeta 1: OBRAS3 -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/obras3.jpg" alt="Obra en Las Marías del Valle" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="images/allterrain/obras3.png" alt="Obra en Las Marías del Valle" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
                     </div>
                     <div class="project-info">
                         <div>
@@ -815,7 +803,7 @@
                 <!-- Tarjeta 2: OBRAS4 -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/obras4.jpg" alt="Obra en Kaleuche" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="images/allterrain/obras4.png" alt="Obra en Kaleuche" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
                     </div>
                     <div class="project-info">
                         <div>
@@ -828,7 +816,7 @@
                 <!-- Tarjeta 3: OBRAS5 -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/obras5.jpg" alt="Obra en Chapelco Golf" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="images/allterrain/obras5.png" alt="Obra en Chapelco Golf" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
                     </div>
                     <div class="project-info">
                         <div>
@@ -841,13 +829,39 @@
                 <!-- Tarjeta 4: OBRAS6 -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/obras5.jpg" alt="Obra en Alihuen" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="images/allterrain/obras6.png" alt="Obra en Alihuen" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
                     </div>
                     <div class="project-info">
                         <div>
                             <span class="project-tag">Montaje Finalizado</span>
                             <h3>Barrio Alihuen</h3>
                             <p>Estructura de dos plantas con kit optimizado para el ahorro de energía en calefacción. Obra limpia ejecutada respetando los árboles nativos del terreno.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta 5: OBRAS7 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/allterrain/obras7.png" alt="Obra en Altos de Chapelco" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-tag">En Ejecución</span>
+                            <h3>Altos de Chapelco</h3>
+                            <p>Estructura robusta con vigas multilaminadas integrando paneles de revestimiento de excelente aislación térmica y terminaciones exteriores de chapa negra pre-pintada.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta 6: OBRAS8 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/allterrain/obras8.png" alt="Obra en Vega Maipú" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-tag">Instalación Térmica</span>
+                            <h3>Vega Maipú</h3>
+                            <p>Proyecto residencial con foco en eficiencia energética. Reducción en pérdidas de calor mediante sistema de panelería SIP y carpinterías con doble vidriado hermético.</p>
                         </div>
                     </div>
                 </div>
