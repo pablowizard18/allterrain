@@ -95,7 +95,7 @@
 
         .logo-img {
             height: 42px;
-            width: auto;
+            width: 42px;
             border-radius: 50%;
             object-fit: cover;
             border: 1px solid var(--border-highlight);
@@ -138,6 +138,7 @@
             }
         }
 
+        /* Hero Section */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -146,8 +147,6 @@
             justify-content: center;
             padding: 140px 20px 80px 20px;
             background-color: var(--bg-deep);
-            background-image: linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), 
-                              url('obras1.jpg'); 
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -401,7 +400,6 @@
             min-width: 320px;
             height: 550px;
             background-color: #1a1e26;
-            background-image: url('foto2.jpg'); 
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -772,7 +770,7 @@
     <header id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="logo.png" alt="All Terrain" class="logo-img" onerror="handleImgError(this, 'logo')">
+                <img src="logo.jpg" alt="All Terrain" class="logo-img" onerror="handleImgError(this, 'logo')">
                 ALL <span>TERRAIN</span>
             </a>
             <ul class="nav-links">
@@ -802,6 +800,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN SERVICIOS CON LAS IMÁGENES REALES DE PABLO -->
         <section class="services-section" id="servicios">
             <div class="section-header">
                 <h2 class="reveal">Nuestros <span>Servicios Especializados</span></h2>
@@ -810,7 +809,7 @@
             
             <div class="services-grid">
                 
-                <!-- 1. Construcción en seco / SIP -> obras1.jpg -->
+                <!-- 1. Construcción en seco / SIP -> obras1 -->
                 <div class="service-card reveal">
                     <div class="service-img-wrapper">
                         <img src="obras1.jpg" alt="Construcción en Seco y Paneles SIP" class="service-img"
@@ -825,7 +824,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Sistemas de riego -> foto5.jpg -->
+                <!-- 2. Sistemas de riego -> foto5 -->
                 <div class="service-card reveal" style="transition-delay: 0.1s;">
                     <div class="service-img-wrapper">
                         <img src="foto5.jpg" alt="Sistemas de Riego Automatizados" class="service-img"
@@ -840,7 +839,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Electricidad de obra -> foto7.jpg -->
+                <!-- 3. Electricidad de obra -> foto7 -->
                 <div class="service-card reveal" style="transition-delay: 0.2s;">
                     <div class="service-img-wrapper">
                         <img src="foto7.jpg" alt="Instalaciones Eléctricas Profesionales" class="service-img"
@@ -855,7 +854,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Herrería de diseño -> foto4.jpg -->
+                <!-- 4. Herrería de diseño -> foto4 -->
                 <div class="service-card reveal" style="transition-delay: 0.3s;">
                     <div class="service-img-wrapper">
                         <img src="foto4.jpg" alt="Herrería y Estructuras Metálicas" class="service-img"
@@ -870,7 +869,7 @@
                     </div>
                 </div>
 
-                <!-- 5. Mantenimiento general -> foto1.jpg -->
+                <!-- 5. Mantenimiento general -> foto1 -->
                 <div class="service-card reveal" style="transition-delay: 0.4s;">
                     <div class="service-img-wrapper">
                         <img src="foto1.jpg" alt="Mantenimiento General de Propiedades" class="service-img"
@@ -897,6 +896,7 @@
             <div class="bleed-image" id="bleed-image-bg"></div>
         </section>
 
+        <!-- PROYECTOS / GALERÍA DE OBRAS BARRIO POR BARRIO -->
         <section class="projects-section" id="obras">
             <div class="section-header">
                 <h2>Proyectos en <span>San Martín de los Andes</span></h2>
@@ -904,7 +904,7 @@
             </div>
             <div class="neighborhoods-grid">
                 
-                <!-- 1. Las Marías del Valle -> foto2.jpg -->
+                <!-- 1. Las Marías del Valle -> foto2 -->
                 <div class="project-card">
                     <div class="project-image-container">
                         <img src="foto2.jpg" alt="Obra en Las Marías del Valle" 
@@ -919,7 +919,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Kaleuche Alto -> obras6.jpg -->
+                <!-- 2. Kaleuche Alto -> obras6 -->
                 <div class="project-card">
                     <div class="project-image-container">
                         <img src="obras6.jpg" alt="Obra en Kaleuche" 
@@ -934,7 +934,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Chapelco Golf -> obras7.jpg -->
+                <!-- 3. Chapelco Golf -> obras7 -->
                 <div class="project-card">
                     <div class="project-image-container">
                         <img src="obras7.jpg" alt="Obra en Chapelco Golf" 
@@ -949,7 +949,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Vega Maipú -> foto3.jpg -->
+                <!-- 4. Vega Maipú -> foto3 -->
                 <div class="project-card">
                     <div class="project-image-container">
                         <img src="foto3.jpg" alt="Obra en Vega Maipú" 
@@ -1038,7 +1038,7 @@
         <div class="footer-grid">
             <div class="footer-brand-wrapper">
                 <div class="footer-logo-container">
-                    <img src="logo.png" alt="All Terrain" class="footer-logo" onerror="handleImgError(this, 'logo')">
+                    <img src="logo.jpg" alt="All Terrain" class="footer-logo" onerror="handleImgError(this, 'logo')">
                 </div>
                 <p>Especialistas en montaje técnico y mantenimiento integral en San Martín de los Andes. Soluciones robustas para habitar la cordillera sin preocupaciones.</p>
                 <div class="social-icons">
@@ -1072,32 +1072,24 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         /**
-         * Sistema inteligente de auto-recuperación de imágenes.
-         * Si falla el JPG, prueba PNG (y viceversa) para evitar imágenes rotas.
+         * Sistema inteligente de auto-recuperación de imágenes en la misma carpeta.
+         * Prueba con .jpg, .png, .jpeg, .JPG y .PNG para que se cargue sí o sí en tu PC.
          */
         function handleImgError(img, filename) {
             if (!img.dataset.attempt) {
                 img.dataset.attempt = "1";
-                // Intercambiar extensiones si falla la primera
-                if (img.src.toLowerCase().endsWith('.jpg') || img.src.toLowerCase().endsWith('.jpeg')) {
-                    img.src = filename + ".png";
-                } else {
-                    img.src = filename + ".jpg";
-                }
+                img.src = filename + ".png";
             } else if (img.dataset.attempt === "1") {
                 img.dataset.attempt = "2";
-                img.src = "allterrain/" + filename + ".jpg";
+                img.src = filename + ".jpeg";
             } else if (img.dataset.attempt === "2") {
                 img.dataset.attempt = "3";
-                img.src = "allterrain/" + filename + ".png";
+                img.src = filename + ".JPG";
             } else if (img.dataset.attempt === "3") {
                 img.dataset.attempt = "4";
-                img.src = "images/allterrain/" + filename + ".jpg";
-            } else if (img.dataset.attempt === "4") {
-                img.dataset.attempt = "5";
-                img.src = "images/allterrain/" + filename + ".png";
+                img.src = filename + ".PNG";
             } else {
-                // Fallbacks visuales de internet si no existen de manera local
+                // Fallbacks visuales reales de internet si la foto local de verdad no existe
                 const fallbacks = {
                     'foto1': 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=600',
                     'foto2': 'https://images.unsplash.com/photo-1558905612-1e9a40f7b035?q=80&w=600',
@@ -1123,9 +1115,9 @@
                 const extensions = [
                     baseName + '.jpg', 
                     baseName + '.png', 
-                    'allterrain/' + baseName + '.jpg', 
-                    'allterrain/' + baseName + '.png',
-                    'images/allterrain/' + baseName + '.jpg'
+                    baseName + '.jpeg',
+                    baseName + '.JPG',
+                    baseName + '.PNG'
                 ];
                 let currentIdx = 0;
 
