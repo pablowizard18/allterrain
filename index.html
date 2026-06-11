@@ -17,7 +17,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* 1. CONFIGURACIÓN DE COLORES Y VARIABLES */
         :root {
             --bg-deep: #0b0d11;
             --bg-card: #14171f;
@@ -47,7 +46,7 @@
             line-height: 1.6;
         }
 
-        /* TEXTURA DE GRANO SUTIL DE ARQUITECTURA */
+        /* Textura sutil de fondo */
         body::before {
             content: "";
             position: fixed;
@@ -59,7 +58,7 @@
             z-index: 9999;
         }
 
-        /* NAVBAR CON EFECTO FROSTED GLASS */
+        /* Navbar con efecto Frosted Glass */
         header {
             position: fixed;
             top: 0;
@@ -139,7 +138,6 @@
             }
         }
 
-        /* HERO CON PARALLAX */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -149,7 +147,7 @@
             padding: 140px 20px 80px 20px;
             background-color: var(--bg-deep);
             background-image: linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), 
-                              url('obras1.png'); 
+                              url('obras1.jpg'); 
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -267,7 +265,6 @@
             border-color: #fff;
         }
 
-        /* SECCIÓN DE NUESTROS 5 SERVICIOS INTEGRALES */
         .services-section {
             padding: 100px 20px;
             max-width: 1200px;
@@ -305,7 +302,6 @@
             background-color: #0b0d11;
         }
 
-        /* Filtro de revelado en fotos de servicios */
         .service-img {
             width: 100%;
             height: 100%;
@@ -367,7 +363,6 @@
             line-height: 1.6;
         }
 
-        /* SECCIÓN FILOSOFÍA / LOGÍSTICA INTEGRAL */
         .bleed-container {
             display: flex;
             background-color: var(--bg-card);
@@ -412,7 +407,6 @@
             background-size: cover;
         }
 
-        /* PROYECTOS INTEGRALES EN MARCHA (GALERÍA DE 6 PROYECTOS) */
         .projects-section {
             padding: 100px 20px;
             max-width: 1200px;
@@ -491,7 +485,6 @@
             line-height: 1.5;
         }
 
-        /* COTIZADOR MULTI-SERVICIO */
         .calculator-section {
             padding: 100px 20px;
             background: linear-gradient(180deg, var(--bg-deep) 0%, #11141a 100%);
@@ -791,7 +784,6 @@
     </header>
 
     <main>
-        <!-- HERO -->
         <section class="hero" id="hero-section">
             <div class="hero-content">
                 <div class="badge">
@@ -810,7 +802,6 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE NUESTROS 5 SERVICIOS INTEGRALES -->
         <section class="services-section" id="servicios">
             <div class="section-header">
                 <h2 class="reveal">Nuestros <span>Servicios Especializados</span></h2>
@@ -819,10 +810,10 @@
             
             <div class="services-grid">
                 
-                <!-- 1. Construcción en seco / SIP -> obras1 -->
+                <!-- 1. Construcción en seco / SIP -> obras1.jpg -->
                 <div class="service-card reveal">
                     <div class="service-img-wrapper">
-                        <img src="obras1.png" alt="Construcción en Seco y Paneles SIP" class="service-img"
+                        <img src="obras1.jpg" alt="Construcción en Seco y Paneles SIP" class="service-img"
                              onerror="handleImgError(this, 'obras1')">
                     </div>
                     <div class="service-card-body">
@@ -834,10 +825,10 @@
                     </div>
                 </div>
 
-                <!-- 2. Sistemas de riego -> foto5 -->
+                <!-- 2. Sistemas de riego -> foto5.jpg -->
                 <div class="service-card reveal" style="transition-delay: 0.1s;">
                     <div class="service-img-wrapper">
-                        <img src="foto5.png" alt="Sistemas de Riego Automatizados" class="service-img"
+                        <img src="foto5.jpg" alt="Sistemas de Riego Automatizados" class="service-img"
                              onerror="handleImgError(this, 'foto5')">
                     </div>
                     <div class="service-card-body">
@@ -849,10 +840,10 @@
                     </div>
                 </div>
 
-                <!-- 3. Electricidad de obra -> foto7 -->
+                <!-- 3. Electricidad de obra -> foto7.jpg -->
                 <div class="service-card reveal" style="transition-delay: 0.2s;">
                     <div class="service-img-wrapper">
-                        <img src="foto7.png" alt="Instalaciones Eléctricas Profesionales" class="service-img"
+                        <img src="foto7.jpg" alt="Instalaciones Eléctricas Profesionales" class="service-img"
                              onerror="handleImgError(this, 'foto7')">
                     </div>
                     <div class="service-card-body">
@@ -864,10 +855,10 @@
                     </div>
                 </div>
 
-                <!-- 4. Herrería de diseño -> foto4 -->
+                <!-- 4. Herrería de diseño -> foto4.jpg -->
                 <div class="service-card reveal" style="transition-delay: 0.3s;">
                     <div class="service-img-wrapper">
-                        <img src="foto4.png" alt="Herrería y Estructuras Metálicas" class="service-img"
+                        <img src="foto4.jpg" alt="Herrería y Estructuras Metálicas" class="service-img"
                              onerror="handleImgError(this, 'foto4')">
                     </div>
                     <div class="service-card-body">
@@ -879,10 +870,10 @@
                     </div>
                 </div>
 
-                <!-- 5. Mantenimiento general -> foto1 -->
+                <!-- 5. Mantenimiento general -> foto1.jpg -->
                 <div class="service-card reveal" style="transition-delay: 0.4s;">
                     <div class="service-img-wrapper">
-                        <img src="foto1.png" alt="Mantenimiento General de Propiedades" class="service-img"
+                        <img src="foto1.jpg" alt="Mantenimiento General de Propiedades" class="service-img"
                              onerror="handleImgError(this, 'foto1')">
                     </div>
                     <div class="service-card-body">
@@ -897,7 +888,6 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE LOGÍSTICA INTEGRAL -->
         <section class="bleed-container">
             <div class="bleed-content">
                 <h3 class="reveal">Logística Integral <br><span>Sin Trabas ni Retrasos</span></h3>
@@ -907,7 +897,6 @@
             <div class="bleed-image" id="bleed-image-bg"></div>
         </section>
 
-        <!-- GALERÍA DE PROYECTOS INTEGRALES REALIZADOS -->
         <section class="projects-section" id="obras">
             <div class="section-header">
                 <h2>Proyectos en <span>San Martín de los Andes</span></h2>
@@ -915,10 +904,10 @@
             </div>
             <div class="neighborhoods-grid">
                 
-                <!-- 1. Las Marías del Valle -> foto2 -->
+                <!-- 1. Las Marías del Valle -> foto2.jpg -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="foto2.png" alt="Obra en Las Marías del Valle" 
+                        <img src="foto2.jpg" alt="Obra en Las Marías del Valle" 
                              onerror="handleImgError(this, 'foto2')">
                     </div>
                     <div class="project-info">
@@ -930,10 +919,10 @@
                     </div>
                 </div>
 
-                <!-- 2. Kaleuche Alto -> obras6 -->
+                <!-- 2. Kaleuche Alto -> obras6.jpg -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="obras6.png" alt="Obra en Kaleuche" 
+                        <img src="obras6.jpg" alt="Obra en Kaleuche" 
                              onerror="handleImgError(this, 'obras6')">
                     </div>
                     <div class="project-info">
@@ -945,10 +934,10 @@
                     </div>
                 </div>
 
-                <!-- 3. Chapelco Golf -> obras7 -->
+                <!-- 3. Chapelco Golf -> obras7.jpg -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="obras7.png" alt="Obra en Chapelco Golf" 
+                        <img src="obras7.jpg" alt="Obra en Chapelco Golf" 
                              onerror="handleImgError(this, 'obras7')">
                     </div>
                     <div class="project-info">
@@ -960,40 +949,10 @@
                     </div>
                 </div>
 
-                <!-- 4. Barrio Alihuen -> obras8 -->
+                <!-- 4. Vega Maipú -> foto3.jpg -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="obras8.png" alt="Obra en Alihuen" 
-                             onerror="handleImgError(this, 'obras8')">
-                    </div>
-                    <div class="project-info">
-                        <div>
-                            <span class="project-tag">Montaje Finalizado</span>
-                            <h3>Barrio Alihuen</h3>
-                            <p>Estructura de dos plantas con kit optimizado para el ahorro de energía en calefacción. Obra limpia ejecutada respetando los árboles nativos del terreno.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Altos de Chapelco -> obras2 -->
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <img src="obras2.png" alt="Obra en Altos de Chapelco" 
-                             onerror="handleImgError(this, 'obras2')">
-                    </div>
-                    <div class="project-info">
-                        <div>
-                            <span class="project-tag">En Ejecución</span>
-                            <h3>Altos de Chapelco</h3>
-                            <p>Estructura robusta con vigas multilaminadas integrando paneles de revestimiento de excelente aislación térmica y terminaciones exteriores de chapa negra pre-pintada.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Vega Maipú -> foto3 -->
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <img src="foto3.png" alt="Obra en Vega Maipú" 
+                        <img src="foto3.jpg" alt="Obra en Vega Maipú" 
                              onerror="handleImgError(this, 'foto3')">
                     </div>
                     <div class="project-info">
@@ -1008,7 +967,6 @@
             </div>
         </section>
 
-        <!-- COTIZADOR MULTI-SERVICIO -->
         <section class="calculator-section" id="cotizador">
             <div class="calculator-container reveal">
                 <div style="text-align: center; margin-bottom: 35px;">
@@ -1076,13 +1034,11 @@
         <span id="toastMessage">Por favor completa los campos obligatorios.</span>
     </div>
 
-    <!-- FOOTER ENRIQUECIDO CON LOGO LOCAL REAL -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand-wrapper">
                 <div class="footer-logo-container">
-                    <img src="logo.png" alt="All Terrain" class="footer-logo"
-                         onerror="handleImgError(this, 'logo')">
+                    <img src="logo.png" alt="All Terrain" class="footer-logo" onerror="handleImgError(this, 'logo')">
                 </div>
                 <p>Especialistas en montaje técnico y mantenimiento integral en San Martín de los Andes. Soluciones robustas para habitar la cordillera sin preocupaciones.</p>
                 <div class="social-icons">
@@ -1116,77 +1072,91 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         /**
-         * Sistema inteligente de auto-recuperación de imágenes locales.
-         * Prueba extensiones png/jpg y rutas planas vs subdirectorios para evitar imágenes rotas.
+         * Sistema inteligente de auto-recuperación de imágenes.
+         * Si falla el JPG, prueba PNG (y viceversa) para evitar imágenes rotas.
          */
         function handleImgError(img, filename) {
             if (!img.dataset.attempt) {
                 img.dataset.attempt = "1";
-                img.src = filename + ".jpg";
+                // Intercambiar extensiones si falla la primera
+                if (img.src.toLowerCase().endsWith('.jpg') || img.src.toLowerCase().endsWith('.jpeg')) {
+                    img.src = filename + ".png";
+                } else {
+                    img.src = filename + ".jpg";
+                }
             } else if (img.dataset.attempt === "1") {
                 img.dataset.attempt = "2";
-                img.src = filename + ".png";
+                img.src = "allterrain/" + filename + ".jpg";
             } else if (img.dataset.attempt === "2") {
                 img.dataset.attempt = "3";
-                img.src = "allterrain/" + filename + ".jpg";
+                img.src = "allterrain/" + filename + ".png";
             } else if (img.dataset.attempt === "3") {
                 img.dataset.attempt = "4";
-                img.src = "allterrain/" + filename + ".png";
+                img.src = "images/allterrain/" + filename + ".jpg";
             } else if (img.dataset.attempt === "4") {
                 img.dataset.attempt = "5";
-                img.src = "images/allterrain/" + filename + ".jpg";
-            } else if (img.dataset.attempt === "5") {
-                img.dataset.attempt = "6";
                 img.src = "images/allterrain/" + filename + ".png";
-            } else if (img.dataset.attempt === "6") {
-                img.dataset.attempt = "7";
-                // En última instancia si el archivo local no existe, carga una foto espectacular de internet
+            } else {
+                // Fallbacks visuales de internet si no existen de manera local
                 const fallbacks = {
                     'foto1': 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=600',
                     'foto2': 'https://images.unsplash.com/photo-1558905612-1e9a40f7b035?q=80&w=600',
                     'foto3': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600',
+                    'foto4': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600',
+                    'foto5': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600',
+                    'foto7': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600',
                     'logo': 'https://placehold.co/200x200/14171f/f97316?text=All+Terrain',
                     'obras1': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600',
-                    'obras2': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600',
-                    'obras3': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600',
-                    'obras5': 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=600',
                     'obras6': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=600',
-                    'obras7': 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600',
-                    'obras8': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600'
+                    'obras7': 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600'
                 };
                 img.src = fallbacks[filename] || 'https://placehold.co/600x400/14171f/94a3b8?text=' + filename;
             }
         }
 
-        // Detectar fondos fallidos de secciones tipo Div Background
+        // Detectar fondos fallidos de secciones tipo Div Background sin romper la carga
         window.addEventListener('load', function() {
-            // Verificar si el fondo del hero o del bleed carga correctamente de forma local, sino usar fallback de internet
             const hero = document.getElementById('hero-section');
             const bleed = document.getElementById('bleed-image-bg');
 
-            const testImgHero = new Image();
-            testImgHero.src = 'obras1.png';
-            testImgHero.onerror = () => {
-                testImgHero.src = 'obras1.jpg';
-                testImgHero.onerror = () => {
-                    testImgHero.src = 'allterrain/obras1.png';
-                    testImgHero.onerror = () => {
-                        hero.style.backgroundImage = "linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), url('https://images.unsplash.com/photo-1506974210756-8e1b8985d348?q=80&w=1600')";
-                    }
-                };
-            };
+            function setBackground(element, baseName, fallbackUrl) {
+                const extensions = [
+                    baseName + '.jpg', 
+                    baseName + '.png', 
+                    'allterrain/' + baseName + '.jpg', 
+                    'allterrain/' + baseName + '.png',
+                    'images/allterrain/' + baseName + '.jpg'
+                ];
+                let currentIdx = 0;
 
-            const testImgBleed = new Image();
-            testImgBleed.src = 'foto2.jpg';
-            testImgBleed.onerror = () => {
-                testImgBleed.src = 'foto2.png';
-                testImgBleed.onerror = () => {
-                    testImgBleed.src = 'allterrain/foto2.jpg';
-                    testImgBleed.onerror = () => {
-                        bleed.style.backgroundImage = "url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000')";
+                function tryNext() {
+                    if (currentIdx >= extensions.length) {
+                        if (element === hero) {
+                            element.style.backgroundImage = `linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), url('${fallbackUrl}')`;
+                        } else {
+                            element.style.backgroundImage = `url('${fallbackUrl}')`;
+                        }
+                        return;
                     }
-                };
-            };
+                    const img = new Image();
+                    img.src = extensions[currentIdx];
+                    img.onload = function() {
+                        if (element === hero) {
+                            element.style.backgroundImage = `linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), url('${img.src}')`;
+                        } else {
+                            element.style.backgroundImage = `url('${img.src}')`;
+                        }
+                    };
+                    img.onerror = function() {
+                        currentIdx++;
+                        tryNext();
+                    };
+                }
+                tryNext();
+            }
+
+            setBackground(hero, 'obras1', 'https://images.unsplash.com/photo-1506974210756-8e1b8985d348?q=80&w=1600');
+            setBackground(bleed, 'foto2', 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000');
         });
 
         // Inicializar ScrollReveal de forma fluida
@@ -1211,7 +1181,7 @@
             lastScroll = currentScroll;
         });
 
-        // TOAST ALERT ANIMADA (SIN ALERT MOLESTO)
+        // TOAST ALERT ANIMADA
         function triggerToast(message) {
             const toast = document.getElementById("customToast");
             const toastText = document.getElementById("toastMessage");
