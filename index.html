@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Terrain SMA | Construcción de Vanguardia y Servicios de Montaña</title>
+    <title>All Terrain | Construcción de Vanguardia y Servicios de Montaña</title>
     
     <!-- Tipografías Premium de Arquitectura y Diseño -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,7 +91,15 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border-highlight);
         }
 
         .logo span {
@@ -259,7 +267,6 @@
             border-color: #fff;
         }
 
-        /* */
         /* SECCIÓN DE NUESTROS 5 SERVICIOS INTEGRALES */
         .services-section {
             padding: 100px 20px;
@@ -360,7 +367,6 @@
             line-height: 1.6;
         }
 
-        /* */
         /* SECCIÓN FILOSOFÍA / LOGÍSTICA INTEGRAL */
         .bleed-container {
             display: flex;
@@ -485,7 +491,6 @@
             line-height: 1.5;
         }
 
-        /* */
         /* COTIZADOR MULTI-SERVICIO */
         .calculator-section {
             padding: 100px 20px;
@@ -635,7 +640,6 @@
             box-shadow: 0 15px 25px rgba(255, 255, 255, 0.1);
         }
 
-        /* */
         /* TOAST ALERT SYSTEM */
         #customToast {
             position: fixed;
@@ -774,7 +778,10 @@
     <!-- NAVBAR -->
     <header id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">ALL <span>TERRAIN</span> SMA</a>
+            <a href="#" class="logo">
+                <img src="logo.png" alt="All Terrain" class="logo-img" onerror="handleImgError(this, 'logo')">
+                ALL <span>TERRAIN</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#obras">Obras</a></li>
@@ -783,7 +790,6 @@
         </div>
     </header>
 
-    <!-- -->
     <main>
         <!-- HERO -->
         <section class="hero" id="hero-section">
@@ -804,7 +810,6 @@
             </div>
         </section>
 
-        <!-- -->
         <!-- SECCIÓN DE NUESTROS 5 SERVICIOS INTEGRALES -->
         <section class="services-section" id="servicios">
             <div class="section-header">
@@ -814,11 +819,11 @@
             
             <div class="services-grid">
                 
-                <!-- 1. Construcción en seco / SIP -->
+                <!-- 1. Construcción en seco / SIP -> obras1 -->
                 <div class="service-card reveal">
                     <div class="service-img-wrapper">
-                        <img src="foto1.png" alt="Construcción en Seco y Paneles SIP" class="service-img"
-                             onerror="handleImgError(this, 'foto1')">
+                        <img src="obras1.png" alt="Construcción en Seco y Paneles SIP" class="service-img"
+                             onerror="handleImgError(this, 'obras1')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -829,11 +834,11 @@
                     </div>
                 </div>
 
-                <!-- 2. Sistemas de riego -->
+                <!-- 2. Sistemas de riego -> foto5 -->
                 <div class="service-card reveal" style="transition-delay: 0.1s;">
                     <div class="service-img-wrapper">
-                        <img src="foto2.png" alt="Sistemas de Riego Automatizados" class="service-img"
-                             onerror="handleImgError(this, 'foto2')">
+                        <img src="foto5.png" alt="Sistemas de Riego Automatizados" class="service-img"
+                             onerror="handleImgError(this, 'foto5')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -844,11 +849,11 @@
                     </div>
                 </div>
 
-                <!-- 3. Electricidad de obra -->
+                <!-- 3. Electricidad de obra -> foto7 -->
                 <div class="service-card reveal" style="transition-delay: 0.2s;">
                     <div class="service-img-wrapper">
-                        <img src="foto3.png" alt="Instalaciones Eléctricas Profesionales" class="service-img"
-                             onerror="handleImgError(this, 'foto3')">
+                        <img src="foto7.png" alt="Instalaciones Eléctricas Profesionales" class="service-img"
+                             onerror="handleImgError(this, 'foto7')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -859,12 +864,11 @@
                     </div>
                 </div>
 
-                <!-- 4. Herrería de diseño -->
+                <!-- 4. Herrería de diseño -> foto4 -->
                 <div class="service-card reveal" style="transition-delay: 0.3s;">
                     <div class="service-img-wrapper">
-                        <!-- Reutilizamos obras2 para herrería (las vigas de techo) -->
-                        <img src="obras2.png" alt="Herrería y Estructuras Metálicas" class="service-img"
-                             onerror="handleImgError(this, 'obras2')">
+                        <img src="foto4.png" alt="Herrería y Estructuras Metálicas" class="service-img"
+                             onerror="handleImgError(this, 'foto4')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -875,12 +879,11 @@
                     </div>
                 </div>
 
-                <!-- 5. Mantenimiento general -->
+                <!-- 5. Mantenimiento general -> foto1 -->
                 <div class="service-card reveal" style="transition-delay: 0.4s;">
                     <div class="service-img-wrapper">
-                        <!-- Reutilizamos obras6 para mantenimiento (foto humana de obra) -->
-                        <img src="obras6.png" alt="Mantenimiento General de Propiedades" class="service-img"
-                             onerror="handleImgError(this, 'obras6')">
+                        <img src="foto1.png" alt="Mantenimiento General de Propiedades" class="service-img"
+                             onerror="handleImgError(this, 'foto1')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -894,7 +897,6 @@
             </div>
         </section>
 
-        <!-- -->
         <!-- SECCIÓN DE LOGÍSTICA INTEGRAL -->
         <section class="bleed-container">
             <div class="bleed-content">
@@ -905,7 +907,6 @@
             <div class="bleed-image" id="bleed-image-bg"></div>
         </section>
 
-        <!-- -->
         <!-- GALERÍA DE PROYECTOS INTEGRALES REALIZADOS -->
         <section class="projects-section" id="obras">
             <div class="section-header">
@@ -914,11 +915,11 @@
             </div>
             <div class="neighborhoods-grid">
                 
-                <!-- 1. Las Marías del Valle -->
+                <!-- 1. Las Marías del Valle -> foto2 -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="obras1.png" alt="Obra en Las Marías del Valle" 
-                             onerror="handleImgError(this, 'obras1')">
+                        <img src="foto2.png" alt="Obra en Las Marías del Valle" 
+                             onerror="handleImgError(this, 'foto2')">
                     </div>
                     <div class="project-info">
                         <div>
@@ -929,11 +930,11 @@
                     </div>
                 </div>
 
-                <!-- 2. Kaleuche Alto -->
+                <!-- 2. Kaleuche Alto -> obras6 -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="obras5.png" alt="Obra en Kaleuche" 
-                             onerror="handleImgError(this, 'obras5')">
+                        <img src="obras6.png" alt="Obra en Kaleuche" 
+                             onerror="handleImgError(this, 'obras6')">
                     </div>
                     <div class="project-info">
                         <div>
@@ -944,7 +945,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Chapelco Golf -->
+                <!-- 3. Chapelco Golf -> obras7 -->
                 <div class="project-card">
                     <div class="project-image-container">
                         <img src="obras7.png" alt="Obra en Chapelco Golf" 
@@ -959,7 +960,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Barrio Alihuen -->
+                <!-- 4. Barrio Alihuen -> obras8 -->
                 <div class="project-card">
                     <div class="project-image-container">
                         <img src="obras8.png" alt="Obra en Alihuen" 
@@ -974,7 +975,7 @@
                     </div>
                 </div>
 
-                <!-- 5. Altos de Chapelco -->
+                <!-- 5. Altos de Chapelco -> obras2 -->
                 <div class="project-card">
                     <div class="project-image-container">
                         <img src="obras2.png" alt="Obra en Altos de Chapelco" 
@@ -989,11 +990,11 @@
                     </div>
                 </div>
 
-                <!-- 6. Vega Maipú -->
+                <!-- 6. Vega Maipú -> foto3 -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="obras3.png" alt="Obra en Vega Maipú" 
-                             onerror="handleImgError(this, 'obras3')">
+                        <img src="foto3.png" alt="Obra en Vega Maipú" 
+                             onerror="handleImgError(this, 'foto3')">
                     </div>
                     <div class="project-info">
                         <div>
@@ -1007,7 +1008,6 @@
             </div>
         </section>
 
-        <!-- -->
         <!-- COTIZADOR MULTI-SERVICIO -->
         <section class="calculator-section" id="cotizador">
             <div class="calculator-container reveal">
@@ -1076,13 +1076,12 @@
         <span id="toastMessage">Por favor completa los campos obligatorios.</span>
     </div>
 
-    <!-- -->
     <!-- FOOTER ENRIQUECIDO CON LOGO LOCAL REAL -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand-wrapper">
                 <div class="footer-logo-container">
-                    <img src="logo.png" alt="All Terrain SMA" class="footer-logo"
+                    <img src="logo.png" alt="All Terrain" class="footer-logo"
                          onerror="handleImgError(this, 'logo')">
                 </div>
                 <p>Especialistas en montaje técnico y mantenimiento integral en San Martín de los Andes. Soluciones robustas para habitar la cordillera sin preocupaciones.</p>
@@ -1108,12 +1107,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 All Terrain SMA. Todos los derechos reservados.</p>
+            <p>&copy; 2026 All Terrain. Todos los derechos reservados.</p>
             <p>Hecho para integración rápida con STITCH</p>
         </div>
     </footer>
 
-    <!-- -->
     <!-- LIBRERÍA DE ANIMACIÓN SCROLLREVEAL Y LOGICA DEL NAVBAR -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
@@ -1156,7 +1154,7 @@
                     'obras7': 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600',
                     'obras8': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600'
                 };
-                img.src = fallbacks[filename] || 'https://placehold.co/600x400/14171f/94a3b8?text=All+Terrain';
+                img.src = fallbacks[filename] || 'https://placehold.co/600x400/14171f/94a3b8?text=' + filename;
             }
         }
 
@@ -1245,7 +1243,7 @@
 
             const adicionalesTexto = checkedServices.length > 0 ? checkedServices.join(', ') : 'Ninguno';
 
-            const text = `*¡Hola All Terrain SMA!* 🏔️%0AVengo de la web y quiero consultar por un servicio de mantenimiento o construcción:%0A%0A` +
+            const text = `*¡Hola All Terrain!* 🏔️%0AVengo de la web y quiero consultar por un servicio de mantenimiento o construcción:%0A%0A` +
                          `📍 *Ubicación:* ${zona}%0A` +
                          `🛠️ *Servicio Principal:* ${servicioPrincipal}%0A` +
                          `📐 *Superficie:* ${superficie} m²%0A` +
