@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Terrain SMA | Construcción de Vanguardia con Paneles SIP</title>
+    <title>All Terrain SMA | Construcción de Vanguardia y Servicios de Montaña</title>
     
     <!-- Tipografías Premium de Arquitectura y Diseño -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,17 +13,21 @@
     <!-- FontAwesome para iconos técnicos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Tailwind CSS para el maquetado rápido de componentes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        /* 1. RESET Y VARIABLES */
+        /* 1. CONFIGURACIÓN DE COLORES Y VARIABLES */
         :root {
             --bg-deep: #0b0d11;
             --bg-card: #14171f;
             --bg-card-hover: #1b202b;
-            --accent: #f97316; /* Naranja de obra/seguridad técnico */
+            --accent: #f97316; 
             --accent-hover: #ea580c;
+            --accent-glow: rgba(249, 115, 22, 0.4);
             --text-main: #f1f5f9;
             --text-muted: #94a3b8;
-            --glass: rgba(20, 23, 31, 0.7);
+            --glass: rgba(11, 13, 17, 0.8);
             --border: rgba(255, 255, 255, 0.05);
             --border-highlight: rgba(249, 115, 22, 0.2);
         }
@@ -43,7 +47,19 @@
             line-height: 1.6;
         }
 
-        /* 2. NAVBAR CON EFECTO FROSTED GLASS */
+        /* TEXTURA DE GRANO SUTIL DE ARQUITECTURA */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* NAVBAR CON EFECTO FROSTED GLASS */
         header {
             position: fixed;
             top: 0;
@@ -54,7 +70,7 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .nav-container {
@@ -80,6 +96,7 @@
 
         .logo span {
             color: var(--accent);
+            text-shadow: 0 0 15px var(--accent-glow);
         }
 
         .nav-links {
@@ -101,21 +118,20 @@
             color: var(--accent);
         }
 
-        /* RESPONSIVE PARA EL NAVBAR (Celulares) */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Oculta los links en celular */
+                display: none; 
             }
             .nav-container {
-                justify-content: center; /* Centra el logo de forma limpia */
+                justify-content: center;
                 padding: 15px 20px;
             }
             .logo {
-                font-size: 20px; /* Un pelín más chico para pantallas angostas */
+                font-size: 20px;
             }
         }
 
-        /* 3. HERO SECTION (La Portada de Alto Impacto) */
+        /* HERO CON PARALLAX */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -125,10 +141,11 @@
             padding: 140px 20px 80px 20px;
             background-color: var(--bg-deep);
             background-image: linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), 
-                              url('images/allterrain/obras1.png'); /* FOTO 1: Portada */
+                              url('obras1.png'); 
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
+            background-attachment: fixed;
             overflow: hidden;
         }
 
@@ -144,7 +161,7 @@
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
             text-align: center;
             z-index: 2;
         }
@@ -153,22 +170,29 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(249, 115, 22, 0.1);
+            background: rgba(249, 115, 22, 0.15);
             border: 1px solid var(--border-highlight);
             color: var(--accent);
-            padding: 6px 16px;
+            padding: 8px 18px;
             border-radius: 50px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.35); }
+            70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
         }
 
         .hero h1 {
             font-family: 'Syne', sans-serif;
             font-weight: 800;
-            font-size: clamp(40px, 6vw, 72px);
+            font-size: clamp(36px, 5.5vw, 68px);
             line-height: 1.1;
             letter-spacing: -2px;
             margin-bottom: 25px;
@@ -177,15 +201,17 @@
 
         .hero h1 span {
             color: var(--accent);
+            text-shadow: 0 0 15px var(--accent-glow);
         }
 
         .hero p {
-            font-size: clamp(16px, 2vw, 20px);
+            font-size: clamp(16px, 2vw, 19px);
             color: var(--text-muted);
             margin-bottom: 40px;
-            max-width: 700px;
+            max-width: 780px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
 
         .cta-group {
@@ -198,128 +224,96 @@
         .btn-primary {
             background: var(--accent);
             color: var(--bg-deep);
-            padding: 16px 35px;
+            padding: 16px 30px;
             border-radius: 10px;
             font-weight: 700;
-            font-size: 16px;
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
         }
 
         .btn-primary:hover {
             background: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px) scale(1.02);
         }
 
         .btn-secondary {
             background: transparent;
             color: #fff;
             border: 1px solid var(--border);
-            padding: 16px 35px;
+            padding: 16px 30px;
             border-radius: 10px;
             font-weight: 600;
-            font-size: 16px;
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.05);
             border-color: #fff;
-            transform: translateY(-3px);
         }
 
-        /* 4. SECCIÓN VENTAJAS DEL SISTEMA SIP con Efecto Revelado */
-        .system-section {
+        /* */
+        /* SECCIÓN DE NUESTROS 5 SERVICIOS INTEGRALES */
+        .services-section {
             padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-
-        .section-header h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(32px, 4vw, 48px);
-            letter-spacing: -1px;
-            margin-bottom: 15px;
-        }
-
-        .section-header h2 span {
-            color: var(--accent);
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 18px;
-        }
-
-        .advantages-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
-        .advantage-card {
+        .service-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
-            overflow: hidden; /* Corta el desborde del zoom de la foto */
+            overflow: hidden;
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
             display: flex;
             flex-direction: column;
         }
 
-        .advantage-card:hover {
+        .service-card:hover {
             background: var(--bg-card-hover);
             transform: translateY(-8px);
-            border-color: var(--border-highlight);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(249, 115, 22, 0.1);
         }
 
-        /* Contenedor de la Imagen */
-        .advantage-img-wrapper {
+        .service-img-wrapper {
             width: 100%;
-            height: 200px;
+            height: 220px;
             overflow: hidden;
             position: relative;
             background-color: #0b0d11;
         }
 
-        /* Imagen Borrosa por defecto */
-        .advantage-img {
+        /* Filtro de revelado en fotos de servicios */
+        .service-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: blur(8px) brightness(0.65) grayscale(15%);
-            transform: scale(1.15); /* Previene bordes blancos por el blur */
-            transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                        filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: blur(6px) brightness(0.6) grayscale(15%);
+            transform: scale(1.1);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Al pasar el mouse, se quita el blur y se aclara */
-        .advantage-card:hover .advantage-img {
+        .service-card:hover .service-img {
             filter: blur(0px) brightness(0.95) grayscale(0%);
-            transform: scale(1.02); /* Suave zoom out */
+            transform: scale(1.02);
         }
 
-        /* Cuerpo de la tarjeta */
-        .advantage-card-body {
+        .service-card-body {
             padding: 35px 30px;
             position: relative;
             flex-grow: 1;
@@ -327,8 +321,7 @@
             flex-direction: column;
         }
 
-        /* Icono superpuesto flotante 3D */
-        .advantage-icon {
+        .service-icon {
             font-size: 22px;
             color: var(--accent);
             background: #14171f;
@@ -339,35 +332,36 @@
             justify-content: center;
             border-radius: 14px;
             border: 1px solid var(--border-highlight);
-            margin-top: -64px; /* Flota justo en el borde de la imagen */
+            margin-top: -64px;
             margin-bottom: 20px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
             z-index: 10;
             position: relative;
-            transition: all 0.5s ease;
+            transition: all 0.3s ease;
         }
 
-        .advantage-card:hover .advantage-icon {
+        .service-card:hover .service-icon {
             background: var(--accent);
             color: var(--bg-deep);
             transform: scale(1.08) translateY(-2px);
             box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
         }
 
-        .advantage-card h3 {
+        .service-card h3 {
             font-family: 'Syne', sans-serif;
             font-size: 22px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #fff;
         }
 
-        .advantage-card p {
+        .service-card p {
             color: var(--text-muted);
             font-size: 15px;
             line-height: 1.6;
         }
 
-        /* 5. SECCIÓN BLEED (Velocidad de construcción en seco) */
+        /* */
+        /* SECCIÓN FILOSOFÍA / LOGÍSTICA INTEGRAL */
         .bleed-container {
             display: flex;
             background-color: var(--bg-card);
@@ -406,13 +400,93 @@
             min-width: 320px;
             height: 550px;
             background-color: #1a1e26;
-            background-image: url('images/allterrain/obras2.png'); /* FOTO 2: Acción / Montaje */
+            background-image: url('foto2.jpg'); 
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
         }
 
-        /* 6. COTIZADOR INTERACTIVO (Formulario WhatsApp Avanzado) */
+        /* PROYECTOS INTEGRALES EN MARCHA (GALERÍA DE 6 PROYECTOS) */
+        .projects-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .neighborhoods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background-color: #1a1e26;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image-container img {
+            transform: scale(1.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .project-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-tag {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .project-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* */
+        /* COTIZADOR MULTI-SERVICIO */
         .calculator-section {
             padding: 100px 20px;
             background: linear-gradient(180deg, var(--bg-deep) 0%, #11141a 100%);
@@ -529,7 +603,7 @@
         }
 
         .custom-checkbox input:checked + i::before {
-            content: "\f14a"; /* Icono de check seleccionado */
+            content: "\f14a";
         }
 
         .custom-checkbox:hover {
@@ -561,86 +635,29 @@
             box-shadow: 0 15px 25px rgba(255, 255, 255, 0.1);
         }
 
-        /* 7. OBRAS EN MARCHA (Galería y Barrios con Imágenes de Portafolio) */
-        .projects-section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .neighborhoods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-image-container {
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-            background-color: #1a1e26;
-        }
-
-        .project-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-image-container img {
-            transform: scale(1.05);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-highlight);
-        }
-
-        .project-info {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-tag {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            display: inline-block;
-        }
-
-        .project-card h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 22px;
-            margin-bottom: 12px;
+        /* */
+        /* TOAST ALERT SYSTEM */
+        #customToast {
+            position: fixed;
+            bottom: -100px;
+            right: 20px;
+            background: #ef4444;
             color: #fff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            z-index: 99999;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 15px;
-            line-height: 1.5;
+        #customToast.show {
+            bottom: 20px;
         }
 
-        /* 8. FOOTER ENRIQUECIDO CON LOGO */
+        /* FOOTER CON LOGO LOCAL */
         footer {
             background: #07080b;
             padding: 80px 20px 40px 20px;
@@ -677,7 +694,6 @@
         .footer-brand-wrapper p {
             color: var(--text-muted);
             font-size: 15px;
-            line-height: 1.6;
         }
 
         .footer-links h4 {
@@ -708,7 +724,7 @@
         .social-icons {
             display: flex;
             gap: 15px;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .social-icons a {
@@ -745,119 +761,164 @@
             color: var(--text-muted);
             font-size: 14px;
         }
+
+        /* CUSTOM SCROLLBAR DE OBRA */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-deep); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
     </style>
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <header>
+    <header id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">ALL <span>TERRAIN</span> SMA</a>
             <ul class="nav-links">
-                <li><a href="#sistema">Sistema SIP</a></li>
+                <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#obras">Obras</a></li>
                 <li><a href="#cotizador">Presupuesto</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- -->
     <main>
-        <section class="hero">
+        <!-- HERO -->
+        <section class="hero" id="hero-section">
             <div class="hero-content">
                 <div class="badge">
-                    <i class="fa-solid fa-mountain-sun"></i> Construcción Patagónica Sustentable
+                    <i class="fa-solid fa-mountain-sun"></i> Soluciones Integrales de Montaña
                 </div>
-                <h1>Montaje Eficiente de <span>Paneles SIP</span></h1>
-                <p>Especialistas en estructuras térmicas de alta precisión en San Martín de los Andes. Reducimos los tiempos de obra en un 60% para proteger tu proyecto del invierno.</p>
+                <h1>Mantenimiento & Construcción <span>Todo Terreno</span></h1>
+                <p>Especialistas en montaje de paneles SIP, sistemas de riego, electricidad de obra, herrería de diseño y mantenimiento general en San Martín de los Andes. Cuidamos tu propiedad en cualquier estación del año.</p>
                 <div class="cta-group">
                     <a href="#cotizador" class="btn-primary">
-                        <i class="fa-solid fa-calculator"></i> Cotizar Mi Obra
+                        <i class="fa-solid fa-calculator"></i> Cotizar Servicio
                     </a>
-                    <a href="#sistema" class="btn-secondary">
-                        <i class="fa-solid fa-circle-info"></i> Conocer el Sistema
+                    <a href="#servicios" class="btn-secondary">
+                        <i class="fa-solid fa-circle-info"></i> Ver Qué Hacemos
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN VENTAJAS (CON FOTOS INTERACTIVAS REVELADAS) -->
-        <section class="system-section" id="sistema">
+        <!-- -->
+        <!-- SECCIÓN DE NUESTROS 5 SERVICIOS INTEGRALES -->
+        <section class="services-section" id="servicios">
             <div class="section-header">
-                <h2>¿Por qué construir con <span>Sistema SIP</span>?</h2>
-                <p>La alternativa sustentable y moderna que supera a la obra tradicional húmeda frente al riguroso clima del sur.</p>
+                <h2 class="reveal">Nuestros <span>Servicios Especializados</span></h2>
+                <p class="reveal">Un equipo multidisciplinar y equipado para resolver todas las necesidades de tu terreno o cabaña con la máxima velocidad y prolijidad del mercado.</p>
             </div>
-            <div class="advantages-grid">
+            
+            <div class="services-grid">
                 
-                <!-- Tarjeta 1: foto1.png (Eficiencia Térmica) -->
-                <div class="advantage-card">
-                    <div class="advantage-img-wrapper">
-                        <img src="images/allterrain/foto1.png" alt="Eficiencia Térmica Extrema" class="advantage-img"
-                             onerror="if(!this.src.endsWith('.jpg')){this.src=this.src.replace('.png','.jpg');}">
+                <!-- 1. Construcción en seco / SIP -->
+                <div class="service-card reveal">
+                    <div class="service-img-wrapper">
+                        <img src="foto1.png" alt="Construcción en Seco y Paneles SIP" class="service-img"
+                             onerror="handleImgError(this, 'foto1')">
                     </div>
-                    <div class="advantage-card-body">
-                        <div class="advantage-icon">
-                            <i class="fa-solid fa-temperature-arrow-down"></i>
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-trowel-bricks"></i>
                         </div>
-                        <h3>Eficiencia Térmica Extrema</h3>
-                        <p>La máxima aislación del núcleo de poliuretano ahorra hasta un 60% en calefacción. Ideal para los inviernos crudos de San Martín de los Andes.</p>
+                        <h3>Construcción en Seco & SIP</h3>
+                        <p>Montaje rápido y milimétrico de paneles térmicos SIP. Levantamos la estructura de tu kit en un 60% menos de tiempo para ganarle al invierno patagónico.</p>
                     </div>
                 </div>
 
-                <!-- Tarjeta 2: foto2.png (Velocidad de Montaje) -->
-                <div class="advantage-card">
-                    <div class="advantage-img-wrapper">
-                        <img src="images/allterrain/foto2.png" alt="Velocidad de Montaje" class="advantage-img"
-                             onerror="if(!this.src.endsWith('.jpg')){this.src=this.src.replace('.png','.jpg');}">
+                <!-- 2. Sistemas de riego -->
+                <div class="service-card reveal" style="transition-delay: 0.1s;">
+                    <div class="service-img-wrapper">
+                        <img src="foto2.png" alt="Sistemas de Riego Automatizados" class="service-img"
+                             onerror="handleImgError(this, 'foto2')">
                     </div>
-                    <div class="advantage-card-body">
-                        <div class="advantage-icon">
-                            <i class="fa-solid fa-bolt"></i>
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-droplet"></i>
                         </div>
-                        <h3>Velocidad de Montaje</h3>
-                        <p>El 80% de la estructura de un kit SIP se levanta en tan solo 3 semanas. La nieve o el barro ya no retrasan los plazos de obra.</p>
+                        <h3>Sistemas de Riego</h3>
+                        <p>Planificación, diseño e instalación de sistemas de riego automatizados por aspersión y goteo. Optimizamos el agua para mantener tu parquizado impecable.</p>
                     </div>
                 </div>
 
-                <!-- Tarjeta 3: foto3.png (Obra Limpia y Precisa) -->
-                <div class="advantage-card">
-                    <div class="advantage-img-wrapper">
-                        <img src="images/allterrain/foto3.png" alt="Obra Limpia y Precisa" class="advantage-img"
-                             onerror="if(!this.src.endsWith('.jpg')){this.src=this.src.replace('.png','.jpg');}">
+                <!-- 3. Electricidad de obra -->
+                <div class="service-card reveal" style="transition-delay: 0.2s;">
+                    <div class="service-img-wrapper">
+                        <img src="foto3.png" alt="Instalaciones Eléctricas Profesionales" class="service-img"
+                             onerror="handleImgError(this, 'foto3')">
                     </div>
-                    <div class="advantage-card-body">
-                        <div class="advantage-icon">
-                            <i class="fa-solid fa-broom"></i>
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-bolt-lightning"></i>
                         </div>
-                        <h3>Obra Limpia y Precisa</h3>
-                        <p>Estructuras milimétricas sin desperdicios en terreno. Respetamos y cuidamos el ecosistema natural de la cordillera.</p>
+                        <h3>Electricidad General</h3>
+                        <p>Instalaciones eléctricas de obra, cableados estructurados, tableros de control y automatización de luces bajo estrictas normas de seguridad.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Herrería de diseño -->
+                <div class="service-card reveal" style="transition-delay: 0.3s;">
+                    <div class="service-img-wrapper">
+                        <!-- Reutilizamos obras2 para herrería (las vigas de techo) -->
+                        <img src="obras2.png" alt="Herrería y Estructuras Metálicas" class="service-img"
+                             onerror="handleImgError(this, 'obras2')">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <h3>Herrería de Obra & Diseño</h3>
+                        <p>Fabricación y montaje de barandas, portones automatizados, cercos perimetrales y refuerzos metálicos estructurales para resistir cargas de nieve.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Mantenimiento general -->
+                <div class="service-card reveal" style="transition-delay: 0.4s;">
+                    <div class="service-img-wrapper">
+                        <!-- Reutilizamos obras6 para mantenimiento (foto humana de obra) -->
+                        <img src="obras6.png" alt="Mantenimiento General de Propiedades" class="service-img"
+                             onerror="handleImgError(this, 'obras6')">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3>Mantenimiento de Propiedades</h3>
+                        <p>Servicio de cuidado general para cabañas y complejos turísticos. Reparaciones rápidas, pintura, plomería y puesta a punto integral para la temporada.</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- SECCIÓN BLEED (AVANCE RÁPIDO) -->
+        <!-- -->
+        <!-- SECCIÓN DE LOGÍSTICA INTEGRAL -->
         <section class="bleed-container">
             <div class="bleed-content">
-                <h3>Montaje de Kits SIP <br><span>Sin Frenar por el Clima</span></h3>
-                <p>En All Terrain dominamos la geografía de montaña. Ya sea en pendientes empinadas o en medio de las heladas, nuestros equipos coordinan logística y grúa para ensamblar las paredes y techos reforzados en tiempos récord.</p>
-                <p>Trabajamos integrados con los mejores proveedores de kits estructurales (como TWIT SIP) para garantizar un encastre perfecto, reduciendo el riesgo de filtraciones de aire frío.</p>
+                <h3 class="reveal">Logística Integral <br><span>Sin Trabas ni Retrasos</span></h3>
+                <p class="reveal">En All Terrain entendemos que construir o mantener una propiedad en San Martín de los Andes requiere dominar la geografía de montaña. Coordinamos desde la herrería hasta la nivelación técnica del terreno.</p>
+                <p class="reveal">Ya sea en el centro urbano o en pendientes complejas de Kaleuche, simplificamos las etapas de obra para que no tengas que coordinar con múltiples proveedores de forma independiente.</p>
             </div>
-            <div class="bleed-image"></div>
+            <div class="bleed-image" id="bleed-image-bg"></div>
         </section>
 
-        <!-- OBRAS EN MARCHA (CON GALERÍA ACTIVA 100% REAL) -->
+        <!-- -->
+        <!-- GALERÍA DE PROYECTOS INTEGRALES REALIZADOS -->
         <section class="projects-section" id="obras">
             <div class="section-header">
                 <h2>Proyectos en <span>San Martín de los Andes</span></h2>
-                <p>Estamos presentes en los barrios de mayor crecimiento de la zona cordillerana.</p>
+                <p>Estamos presentes en los barrios de mayor crecimiento con soluciones de herrería, obra seca e instalaciones.</p>
             </div>
             <div class="neighborhoods-grid">
-                <!-- Tarjeta 1: OBRAS3 -->
+                
+                <!-- 1. Las Marías del Valle -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/allterrain/obras3.png" alt="Obra en Las Marías del Valle" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="obras1.png" alt="Obra en Las Marías del Valle" 
+                             onerror="handleImgError(this, 'obras1')">
                     </div>
                     <div class="project-info">
                         <div>
@@ -867,10 +928,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 2: OBRAS4 -->
+
+                <!-- 2. Kaleuche Alto -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/allterrain/obras4.png" alt="Obra en Kaleuche" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="obras5.png" alt="Obra en Kaleuche" 
+                             onerror="handleImgError(this, 'obras5')">
                     </div>
                     <div class="project-info">
                         <div>
@@ -880,10 +943,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 3: OBRAS5 -->
+
+                <!-- 3. Chapelco Golf -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/allterrain/obras5.png" alt="Obra en Chapelco Golf" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="obras7.png" alt="Obra en Chapelco Golf" 
+                             onerror="handleImgError(this, 'obras7')">
                     </div>
                     <div class="project-info">
                         <div>
@@ -893,10 +958,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 4: OBRAS6 -->
+
+                <!-- 4. Barrio Alihuen -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/allterrain/obras6.png" alt="Obra en Alihuen" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="obras8.png" alt="Obra en Alihuen" 
+                             onerror="handleImgError(this, 'obras8')">
                     </div>
                     <div class="project-info">
                         <div>
@@ -906,10 +973,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 5: OBRAS7 -->
+
+                <!-- 5. Altos de Chapelco -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/allterrain/obras7.png" alt="Obra en Altos de Chapelco" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="obras2.png" alt="Obra en Altos de Chapelco" 
+                             onerror="handleImgError(this, 'obras2')">
                     </div>
                     <div class="project-info">
                         <div>
@@ -919,10 +988,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 6: OBRAS8 -->
+
+                <!-- 6. Vega Maipú -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="images/allterrain/obras8.png" alt="Obra en Vega Maipú" onerror="this.src='https://images.adsttc.com/media/images/6462/d186/8085/d301/7a00/4c28/newsletter/casa-sosa-40sur-arquitectura_12.jpg?1684197822';">
+                        <img src="obras3.png" alt="Obra en Vega Maipú" 
+                             onerror="handleImgError(this, 'obras3')">
                     </div>
                     <div class="project-info">
                         <div>
@@ -932,75 +1003,89 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- COTIZADOR INTERACTIVO / WHATSAPP -->
+        <!-- -->
+        <!-- COTIZADOR MULTI-SERVICIO -->
         <section class="calculator-section" id="cotizador">
-            <div class="section-header">
-                <h2>Cotizá tu Proyecto <span>Al Instante</span></h2>
-                <p>Completá las variables básicas de tu terreno y envianos la configuración directamente por WhatsApp para recibir un análisis personalizado.</p>
-            </div>
-            <div class="calculator-container">
+            <div class="calculator-container reveal">
+                <div style="text-align: center; margin-bottom: 35px;">
+                    <h2 style="font-family: 'Syne', sans-serif; font-size: clamp(26px, 3vw, 36px); margin-bottom: 10px;">Presupuestá tu <span>Requerimiento</span></h2>
+                    <p style="color: var(--text-muted); font-size: 15px;">Completá los campos y te respondemos con una estimación de viabilidad técnica en menos de 24 hs.</p>
+                </div>
                 <form id="quoteForm">
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="zona">Barrio / Zona de Obra</label>
-                            <input type="text" id="zona" class="form-control" placeholder="Ej. Kaleuche, Las Marías, Alihuen..." required>
+                            <label for="zona">Zona / Barrio de Obra o Cabaña</label>
+                            <input type="text" id="zona" class="form-control" placeholder="Ej. Las Marías, Kaleuche, Centro..." required>
                         </div>
                         <div class="form-group">
-                            <label for="superficie">Superficie a Construir (m²)</label>
-                            <input type="number" id="superficie" class="form-control" placeholder="Ej. 120" required min="1">
-                        </div>
-                        <div class="form-group">
-                            <label for="ambientes">Habitaciones / Ambientes</label>
-                            <input type="text" id="ambientes" class="form-control" placeholder="Ej. 2 habs, 2 baños..." required>
-                        </div>
-                        <div class="form-group">
-                            <label for="kit">Estado del Kit SIP</label>
-                            <select id="kit" class="form-control">
-                                <option value="Necesito asesoramiento y provisión del Kit">Necesito provisión y asesoramiento del Kit</option>
-                                <option value="Ya tengo el Kit comprado (Solo Montaje)">Ya tengo el Kit comprado (Solo mano de obra)</option>
+                            <label for="servicio-principal">Servicio Requerido Principal</label>
+                            <select id="servicio-principal" class="form-control">
+                                <option value="Construcción en Seco y Kit SIP">Construcción en Seco (Kit SIP)</option>
+                                <option value="Sistema de Riego Automatizado">Sistema de Riego Automatizado</option>
+                                <option value="Instalaciones Eléctricas de Obra">Electricidad General / De Obra</option>
+                                <option value="Herrería de Diseño / Herrería de Obra">Herrería de Diseño y Estructura</option>
+                                <option value="Mantenimiento General de Cabaña/Propiedad">Mantenimiento General de Propiedad</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="superficie">Superficie Terreno / Vivienda (m²)</label>
+                            <input type="number" id="superficie" class="form-control" placeholder="Ej. 120 (Dejar vacío si no aplica)" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción de lo que necesitás</label>
+                            <input type="text" id="descripcion" class="form-control" placeholder="Ej: Cerco metálico, cableado, mantenimiento de cubierta..." required>
+                        </div>
+                        
                         <div class="checkbox-group">
-                            <span class="checkbox-label-main">Servicios Complementarios Adicionales</span>
+                            <span class="checkbox-label-main">¿Necesitás integrar más servicios? (Opcional)</span>
                             <div class="services-list">
                                 <label class="custom-checkbox">
-                                    <input type="checkbox" name="services" value="Herreria">
-                                    <i class="fa-regular fa-square"></i> Herrería de Obra
+                                    <input type="checkbox" name="services" value="Construcción SIP">
+                                    <i class="fa-regular fa-square"></i> Kit SIP
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="services" value="Herrería">
+                                    <i class="fa-regular fa-square"></i> Herrería
                                 </label>
                                 <label class="custom-checkbox">
                                     <input type="checkbox" name="services" value="Electricidad">
-                                    <i class="fa-regular fa-square"></i> Instalaciones Eléctricas
+                                    <i class="fa-regular fa-square"></i> Electricidad
                                 </label>
                                 <label class="custom-checkbox">
-                                    <input type="checkbox" name="services" value="Climatizacion">
-                                    <i class="fa-regular fa-square"></i> Climatización / HVAC
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="services" value="Revestimientos">
-                                    <i class="fa-regular fa-square"></i> Revestimientos en Madera
+                                    <input type="checkbox" name="services" value="Mantenimiento">
+                                    <i class="fa-regular fa-square"></i> Mantenimiento
                                 </label>
                             </div>
                         </div>
                     </div>
                     <button type="button" class="btn-submit" onclick="sendQuoteToWhatsApp()">
-                        <i class="fa-brands fa-whatsapp"></i> Enviar Presupuesto por WhatsApp
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Presupuesto por WhatsApp
                     </button>
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FLOATING TOAST -->
+    <div id="customToast">
+        <i class="fa-solid fa-triangle-exclamation"></i> 
+        <span id="toastMessage">Por favor completa los campos obligatorios.</span>
+    </div>
+
+    <!-- -->
+    <!-- FOOTER ENRIQUECIDO CON LOGO LOCAL REAL -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand-wrapper">
                 <div class="footer-logo-container">
-                    <img src="images/allterrain/logo.png" alt="All Terrain SMA" class="footer-logo">
+                    <img src="logo.png" alt="All Terrain SMA" class="footer-logo"
+                         onerror="handleImgError(this, 'logo')">
                 </div>
-                <p>Especialistas en construcción rápida y eficiente en San Martín de los Andes. Innovación estructural para habitar el sur de forma inteligente.</p>
+                <p>Especialistas en montaje técnico y mantenimiento integral en San Martín de los Andes. Soluciones robustas para habitar la cordillera sin preocupaciones.</p>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/allterrain.sma/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 </div>
@@ -1008,13 +1093,13 @@
             <div class="footer-links">
                 <h4>Navegación</h4>
                 <ul>
-                    <li><a href="#sistema">Sistema SIP</a></li>
-                    <li><a href="#obras">Obras en marcha</a></li>
+                    <li><a href="#servicios">Nuestros Servicios</a></li>
+                    <li><a href="#obras">Obras realizadas</a></li>
                     <li><a href="#cotizador">Pedir Presupuesto</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Contacto Frecuente</h4>
+                <h4>Contacto Directo</h4>
                 <ul>
                     <li><i class="fa-solid fa-envelope" style="color: var(--accent); margin-right: 8px;"></i> allterrain.sma@gmail.com</li>
                     <li><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 8px;"></i> +54 9 11 6985-9241</li>
@@ -1028,41 +1113,146 @@
         </div>
     </footer>
 
-    <!-- SISTEMA DE ENVÍO AUTOMÁTICO A WHATSAPP -->
+    <!-- -->
+    <!-- LIBRERÍA DE ANIMACIÓN SCROLLREVEAL Y LOGICA DEL NAVBAR -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script>
+        /**
+         * Sistema inteligente de auto-recuperación de imágenes locales.
+         * Prueba extensiones png/jpg y rutas planas vs subdirectorios para evitar imágenes rotas.
+         */
+        function handleImgError(img, filename) {
+            if (!img.dataset.attempt) {
+                img.dataset.attempt = "1";
+                img.src = filename + ".jpg";
+            } else if (img.dataset.attempt === "1") {
+                img.dataset.attempt = "2";
+                img.src = filename + ".png";
+            } else if (img.dataset.attempt === "2") {
+                img.dataset.attempt = "3";
+                img.src = "allterrain/" + filename + ".jpg";
+            } else if (img.dataset.attempt === "3") {
+                img.dataset.attempt = "4";
+                img.src = "allterrain/" + filename + ".png";
+            } else if (img.dataset.attempt === "4") {
+                img.dataset.attempt = "5";
+                img.src = "images/allterrain/" + filename + ".jpg";
+            } else if (img.dataset.attempt === "5") {
+                img.dataset.attempt = "6";
+                img.src = "images/allterrain/" + filename + ".png";
+            } else if (img.dataset.attempt === "6") {
+                img.dataset.attempt = "7";
+                // En última instancia si el archivo local no existe, carga una foto espectacular de internet
+                const fallbacks = {
+                    'foto1': 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=600',
+                    'foto2': 'https://images.unsplash.com/photo-1558905612-1e9a40f7b035?q=80&w=600',
+                    'foto3': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600',
+                    'logo': 'https://placehold.co/200x200/14171f/f97316?text=All+Terrain',
+                    'obras1': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600',
+                    'obras2': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600',
+                    'obras3': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600',
+                    'obras5': 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=600',
+                    'obras6': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=600',
+                    'obras7': 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600',
+                    'obras8': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600'
+                };
+                img.src = fallbacks[filename] || 'https://placehold.co/600x400/14171f/94a3b8?text=All+Terrain';
+            }
+        }
+
+        // Detectar fondos fallidos de secciones tipo Div Background
+        window.addEventListener('load', function() {
+            // Verificar si el fondo del hero o del bleed carga correctamente de forma local, sino usar fallback de internet
+            const hero = document.getElementById('hero-section');
+            const bleed = document.getElementById('bleed-image-bg');
+
+            const testImgHero = new Image();
+            testImgHero.src = 'obras1.png';
+            testImgHero.onerror = () => {
+                testImgHero.src = 'obras1.jpg';
+                testImgHero.onerror = () => {
+                    testImgHero.src = 'allterrain/obras1.png';
+                    testImgHero.onerror = () => {
+                        hero.style.backgroundImage = "linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), url('https://images.unsplash.com/photo-1506974210756-8e1b8985d348?q=80&w=1600')";
+                    }
+                };
+            };
+
+            const testImgBleed = new Image();
+            testImgBleed.src = 'foto2.jpg';
+            testImgBleed.onerror = () => {
+                testImgBleed.src = 'foto2.png';
+                testImgBleed.onerror = () => {
+                    testImgBleed.src = 'allterrain/foto2.jpg';
+                    testImgBleed.onerror = () => {
+                        bleed.style.backgroundImage = "url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000')";
+                    }
+                };
+            };
+        });
+
+        // Inicializar ScrollReveal de forma fluida
+        ScrollReveal().reveal('.reveal', { 
+            delay: 150, 
+            distance: '40px', 
+            origin: 'bottom', 
+            duration: 900,
+            interval: 80 
+        });
+
+        // Ocultar Navbar al bajar scroll, mostrar al subir
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+            const navbar = document.getElementById("navbar");
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.style.transform = "translateY(-100%)";
+            } else {
+                navbar.style.transform = "translateY(0)";
+            }
+            lastScroll = currentScroll;
+        });
+
+        // TOAST ALERT ANIMADA (SIN ALERT MOLESTO)
+        function triggerToast(message) {
+            const toast = document.getElementById("customToast");
+            const toastText = document.getElementById("toastMessage");
+            toastText.innerText = message;
+            toast.classList.add("show");
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 4000);
+        }
+
+        // ENVÍO DE FORMULARIO A WHATSAPP
         function sendQuoteToWhatsApp() {
-            // Número oficial actualizado de All Terrain
-            const phone = "5491169859241";
+            const phone = "5491169859241"; // Tu número unificado
             
             const zona = document.getElementById('zona').value;
-            const superficie = document.getElementById('superficie').value;
-            const ambientes = document.getElementById('ambientes').value;
-            const kit = document.getElementById('kit').value;
+            const servicioPrincipal = document.getElementById('servicio-principal').value;
+            const superficie = document.getElementById('superficie').value || 'No especificada';
+            const descripcion = document.getElementById('descripcion').value;
 
-            // Validación rápida
-            if (!zona || !superficie || !ambientes) {
-                alert("Por favor completa los campos principales de zona, m² y ambientes.");
+            if (!zona || !servicioPrincipal || !descripcion) {
+                triggerToast("Por favor completa los campos obligatorios.");
                 return;
             }
 
-            // Recolectar checkboxes seleccionados
             const checkedServices = [];
             document.querySelectorAll('input[name="services"]:checked').forEach((checkbox) => {
                 checkedServices.push(checkbox.value);
             });
 
-            const serviciosTexto = checkedServices.length > 0 ? checkedServices.join(', ') : 'Ninguno seleccionado';
+            const adicionalesTexto = checkedServices.length > 0 ? checkedServices.join(', ') : 'Ninguno';
 
-            // Formatear mensaje para que llegue prolijo al celular de la empresa
-            const text = `*¡Hola All Terrain SMA!* Vengo de la web y quiero cotizar una obra:%0A%0A` +
-                         `📍 *Zona de Obra:* ${zona}%0A` +
-                         `📏 *Superficie:* ${superficie} m²%0A` +
-                         `🚪 *Ambientes:* ${ambientes}%0A` +
-                         `📦 *Estado del Kit SIP:* ${kit}%0A` +
-                         `🛠️ *Servicios Extra:* ${serviciosTexto}%0A%0A` +
-                         `_¿Podrían confirmarme disponibilidad y presupuesto estimado?_`;
+            const text = `*¡Hola All Terrain SMA!* 🏔️%0AVengo de la web y quiero consultar por un servicio de mantenimiento o construcción:%0A%0A` +
+                         `📍 *Ubicación:* ${zona}%0A` +
+                         `🛠️ *Servicio Principal:* ${servicioPrincipal}%0A` +
+                         `📐 *Superficie:* ${superficie} m²%0A` +
+                         `📝 *Detalles de lo solicitado:* ${descripcion}%0A` +
+                         `➕ *Otros servicios de interés:* ${adicionalesTexto}%0A%0A` +
+                         `_¿Tienen disponibilidad para cotizar o agendar visita?_`;
 
-            // Redireccionar
             window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
         }
     </script>
