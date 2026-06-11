@@ -437,7 +437,7 @@
 
         .neighborhoods-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -454,7 +454,7 @@
 
         .project-image-container {
             width: 100%;
-            height: 220px;
+            height: 240px;
             overflow: hidden;
             position: relative;
             background-color: #1a1e26;
@@ -794,7 +794,7 @@
     <header id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="logo.jpg" alt="All Terrain" class="logo-img" onerror="handleImgError(this, 'logo')">
+                <img src="images/allterrain/logo.png" alt="All Terrain" class="logo-img" onerror="handleImgError(this, 'logo', 'https://placehold.co/100/14171f/f97316?text=AT')">
                 ALL <span>TERRAIN</span>
             </a>
             <ul class="nav-links">
@@ -824,7 +824,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN SERVICIOS CON LAS IMÁGENES REALES DE PABLO -->
+        <!-- SECCIÓN SERVICIOS -->
         <section class="services-section" id="servicios">
             <div class="section-header">
                 <h2 class="reveal">Nuestros <span>Servicios Especializados</span></h2>
@@ -833,11 +833,11 @@
             
             <div class="services-grid">
                 
-                <!-- 1. Construcción en seco / SIP -> obras1 -->
+                <!-- 1. Construcción en seco / SIP -> obras1.png -->
                 <div class="service-card reveal">
                     <div class="service-img-wrapper">
-                        <img src="obras1.jpg" alt="Construcción en Seco y Paneles SIP" class="service-img"
-                             onerror="handleImgError(this, 'obras1')">
+                        <img src="images/allterrain/obras1.png" alt="Construcción en Seco y Paneles SIP" class="service-img"
+                             onerror="handleImgError(this, 'obras1', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -848,11 +848,11 @@
                     </div>
                 </div>
 
-                <!-- 2. Sistemas de riego -> foto5 (Respaldo si no está en carpeta) -->
+                <!-- 2. Sistemas de riego -> foto5.jpeg -->
                 <div class="service-card reveal" style="transition-delay: 0.1s;">
                     <div class="service-img-wrapper">
-                        <img src="foto5.jpg" alt="Sistemas de Riego Automatizados" class="service-img"
-                             onerror="handleImgError(this, 'foto5')">
+                        <img src="images/allterrain/foto5.jpeg" alt="Sistemas de Riego Automatizados" class="service-img"
+                             onerror="handleImgError(this, 'foto5', 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=600')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -863,11 +863,11 @@
                     </div>
                 </div>
 
-                <!-- 3. Electricidad de obra -> foto7 (Respaldo si no está en carpeta) -->
+                <!-- 3. Electricidad de obra -> foto7.jpeg -->
                 <div class="service-card reveal" style="transition-delay: 0.2s;">
                     <div class="service-img-wrapper">
-                        <img src="foto7.jpg" alt="Instalaciones Eléctricas Profesionales" class="service-img"
-                             onerror="handleImgError(this, 'foto7')">
+                        <img src="images/allterrain/foto7.jpeg" alt="Instalaciones Eléctricas Profesionales" class="service-img"
+                             onerror="handleImgError(this, 'foto7', 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -878,11 +878,11 @@
                     </div>
                 </div>
 
-                <!-- 4. Herrería de diseño -> foto4 (Respaldo si no está en carpeta) -->
+                <!-- 4. Herrería de diseño -> foto4.jpeg -->
                 <div class="service-card reveal" style="transition-delay: 0.3s;">
                     <div class="service-img-wrapper">
-                        <img src="foto4.jpg" alt="Herrería y Estructuras Metálicas" class="service-img"
-                             onerror="handleImgError(this, 'foto4')">
+                        <img src="images/allterrain/foto4.jpeg" alt="Herrería y Estructuras Metálicas" class="service-img"
+                             onerror="handleImgError(this, 'foto4', 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -893,11 +893,11 @@
                     </div>
                 </div>
 
-                <!-- 5. Mantenimiento general -> foto1 -->
+                <!-- 5. Mantenimiento general -> foto1.png -->
                 <div class="service-card reveal" style="transition-delay: 0.4s;">
                     <div class="service-img-wrapper">
-                        <img src="foto1.jpg" alt="Mantenimiento General de Propiedades" class="service-img"
-                             onerror="handleImgError(this, 'foto1')">
+                        <img src="images/allterrain/foto1.png" alt="Mantenimiento General de Propiedades" class="service-img"
+                             onerror="handleImgError(this, 'foto1', 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600')">
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon">
@@ -911,6 +911,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN DE LOGÍSTICA INTEGRAL -->
         <section class="bleed-container">
             <div class="bleed-content">
                 <h3 class="reveal">Logística Integral <br><span>Sin Trabas ni Retrasos</span></h3>
@@ -920,7 +921,7 @@
             <div class="bleed-image" id="bleed-image-bg"></div>
         </section>
 
-        <!-- PROYECTOS / GALERÍA DE OBRAS BARRIO POR BARRIO -->
+        <!-- PROYECTOS / GALERÍA DE OBRAS CON EXACTAMENTE 6 VENTANAS -->
         <section class="projects-section" id="obras">
             <div class="section-header">
                 <h2>Proyectos en <span>San Martín de los Andes</span></h2>
@@ -928,62 +929,92 @@
             </div>
             <div class="neighborhoods-grid">
                 
-                <!-- 1. Las Marías del Valle -> foto2 -->
+                <!-- 1. Las Marías del Valle -> foto2.png -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="foto2.jpg" alt="Obra en Las Marías del Valle" 
-                             onerror="handleImgError(this, 'foto2')">
+                        <img src="images/allterrain/foto2.png" alt="Obra en Las Marías del Valle" 
+                             onerror="handleImgError(this, 'foto2', 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=600')">
                     </div>
                     <div class="project-info">
                         <div>
                             <span class="project-tag">Obra Activa</span>
                             <h3>Las Marías del Valle</h3>
-                            <p>Montaje estructural de vivienda familiar de 145m² con paneles SIP de alta densidad. Terminación en herrería moderna y revestimiento térmico exterior.</p>
+                            <p>Montaje estructural de vivienda familiar con paneles SIP de alta densidad. Terminación en herrería moderna y revestimiento térmico exterior.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Kaleuche Alto -> obras6 -->
+                <!-- 2. Kaleuche Alto -> obras6.png -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="obras6.jpg" alt="Obra en Kaleuche" 
-                             onerror="handleImgError(this, 'obras6')">
+                        <img src="images/allterrain/obras6.png" alt="Obra en Kaleuche" 
+                             onerror="handleImgError(this, 'obras6', 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600')">
                     </div>
                     <div class="project-info">
                         <div>
                             <span class="project-tag">Estructura Lista</span>
                             <h3>Kaleuche Alto</h3>
-                            <p>Proyecto residencial integrado en pendiente boscosa. Refuerzo de vigas para soportar cargas extremas de nieve en invierno patagónico.</p>
+                            <p>Proyecto residencial integrado en pendiente boscosa. Refuerzo de vigas de madera locales para soportar cargas extremas de nieve en invierno patagónico.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. Chapelco Golf -> obras7 -->
+                <!-- 3. Chapelco Golf -> obras7.png -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="obras7.jpg" alt="Obra en Chapelco Golf" 
-                             onerror="handleImgError(this, 'obras7')">
+                        <img src="images/allterrain/obras7.png" alt="Obra en Chapelco Golf" 
+                             onerror="handleImgError(this, 'obras7', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600')">
                     </div>
                     <div class="project-info">
                         <div>
                             <span class="project-tag">Finalizado</span>
                             <h3>Chapelco Golf & Resort</h3>
-                            <p>Diseño premium con excelente desempeño acústico y térmico. Servicio llave en mano que incluye climatización por suelo radiante y revestimiento de madera local.</p>
+                            <p>Diseño premium con excelente desempeño acústico y térmico. Servicio llave en mano que incluye climatización por suelo radiante y herrería de alta gama.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4. Vega Maipú -> foto3 -->
+                <!-- 4. Vega Maipú -> foto3.png -->
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="foto3.jpg" alt="Obra en Vega Maipú" 
-                             onerror="handleImgError(this, 'foto3')">
+                        <img src="images/allterrain/foto3.png" alt="Obra en Vega Maipú" 
+                             onerror="handleImgError(this, 'foto3', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600')">
                     </div>
                     <div class="project-info">
                         <div>
                             <span class="project-tag">Instalación Térmica</span>
                             <h3>Vega Maipú</h3>
-                            <p>Proyecto residencial con foco en eficiencia energética. Reducción en pérdidas de calor mediante sistema de panelería SIP y carpinterías con doble vidriado hermético.</p>
+                            <p>Proyecto residencial con foco en eficiencia energética. Reducción en pérdidas de calor mediante sistema de panelería SIP y carpinterías herméticas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Altos del Sol -> obras5.png -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/allterrain/obras5.png" alt="Obra en Altos del Sol" 
+                             onerror="handleImgError(this, 'obras5', 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600')">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-tag">Pendiente Técnica</span>
+                            <h3>Altos del Sol</h3>
+                            <p>Estructura residencial de montaña montada sobre pilotes elevados. Ingeniería adaptada para respetar la topografía natural y optimizar vistas al cordón montañoso.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. La Cascada -> obras2.png -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/allterrain/obras2.png" alt="Obra en La Cascada" 
+                             onerror="handleImgError(this, 'obras2', 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600')">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-tag">Techo y Cubierta</span>
+                            <h3>La Cascada</h3>
+                            <p>Armado de tirantería y cabios de madera para cubiertas de montaña de alta inclinación. Protegido herméticamente contra la humedad y filtraciones.</p>
                         </div>
                     </div>
                 </div>
@@ -991,6 +1022,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN FORMULARIO INTERACTIVO -->
         <section class="calculator-section" id="cotizador">
             <div class="calculator-container reveal">
                 <div style="text-align: center; margin-bottom: 35px;">
@@ -1058,11 +1090,12 @@
         <span id="toastMessage">Por favor completa los campos obligatorios.</span>
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand-wrapper">
                 <div class="footer-logo-container">
-                    <img src="logo.jpg" alt="All Terrain" class="footer-logo" onerror="handleImgError(this, 'logo')">
+                    <img src="images/allterrain/logo.png" alt="All Terrain" class="footer-logo" onerror="handleImgError(this, 'logo', 'https://placehold.co/100/14171f/f97316?text=AT')">
                 </div>
                 <p>Especialistas en montaje técnico y mantenimiento integral en San Martín de los Andes. Soluciones robustas para habitar la cordillera sin preocupaciones.</p>
                 <div class="social-icons">
@@ -1096,53 +1129,39 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         /**
-         * Sistema inteligente de auto-recuperación de imágenes en la misma carpeta.
-         * Prueba con .jpg, .png, .jpeg, .JPG y .PNG para que se cargue sí o sí en tu PC.
+         * STREAMING_CHUNK: Inicializando script de carga adaptativa y control de errores en imágenes
+         * Prueba PNG, JPEG, JPG, y variantes para que nunca se rompa una ruta local en VS Code.
          */
-        function handleImgError(img, filename) {
-            if (!img.dataset.attempt) {
-                img.dataset.attempt = "1";
-                img.src = filename + ".png";
-            } else if (img.dataset.attempt === "1") {
-                img.dataset.attempt = "2";
-                img.src = filename + ".jpeg";
-            } else if (img.dataset.attempt === "2") {
-                img.dataset.attempt = "3";
-                img.src = filename + ".JPG";
-            } else if (img.dataset.attempt === "3") {
-                img.dataset.attempt = "4";
-                img.src = filename + ".PNG";
+        function handleImgError(img, baseName, fallbackUrl) {
+            const folderPath = "images/allterrain/";
+            
+            if (!img.dataset.formatsTried) {
+                img.dataset.formatsTried = "png";
+                img.src = folderPath + baseName + ".jpeg";
+            } else if (img.dataset.formatsTried === "png") {
+                img.dataset.formatsTried = "jpeg";
+                img.src = folderPath + baseName + ".jpg";
+            } else if (img.dataset.formatsTried === "jpeg") {
+                img.dataset.formatsTried = "jpg";
+                img.src = folderPath + baseName + ".PNG";
+            } else if (img.dataset.formatsTried === "jpg") {
+                img.dataset.formatsTried = "PNG";
+                img.src = folderPath + baseName + ".JPEG";
             } else {
-                // Fallbacks visuales reales de internet si la foto local de verdad no existe
-                const fallbacks = {
-                    'foto1': 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=600',
-                    'foto2': 'https://images.unsplash.com/photo-1558905612-1e9a40f7b035?q=80&w=600',
-                    'foto3': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600',
-                    'foto4': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600',
-                    'foto5': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600',
-                    'foto7': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600',
-                    'logo': 'https://placehold.co/200x200/14171f/f97316?text=All+Terrain',
-                    'obras1': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600',
-                    'obras6': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=600',
-                    'obras7': 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600'
-                };
-                img.src = fallbacks[filename] || 'https://placehold.co/600x400/14171f/94a3b8?text=' + filename;
+                img.onerror = null; 
+                img.src = fallbackUrl || 'https://placehold.co/600x400/14171f/94a3b8?text=' + baseName;
             }
         }
 
-        // Detectar fondos fallidos de secciones tipo Div Background sin romper la carga
+        // Carga dinámica de imágenes de fondo para el Hero y Sección Logística
         window.addEventListener('load', function() {
             const hero = document.getElementById('hero-section');
             const bleed = document.getElementById('bleed-image-bg');
 
-            function setBackground(element, baseName, fallbackUrl) {
-                const extensions = [
-                    baseName + '.jpg', 
-                    baseName + '.png', 
-                    baseName + '.jpeg',
-                    baseName + '.JPG',
-                    baseName + '.PNG'
-                ];
+            function setBackground(element, baseName, defaultExt, fallbackUrl) {
+                const folderPath = "images/allterrain/";
+                // Prioriza la extensión original configurada en la captura, luego prueba las otras
+                const extensions = [defaultExt, '.png', '.jpeg', '.jpg', '.PNG', '.JPEG', '.JPG'];
                 let currentIdx = 0;
 
                 function tryNext() {
@@ -1155,7 +1174,7 @@
                         return;
                     }
                     const img = new Image();
-                    img.src = extensions[currentIdx];
+                    img.src = folderPath + baseName + extensions[currentIdx];
                     img.onload = function() {
                         if (element === hero) {
                             element.style.backgroundImage = `linear-gradient(135deg, rgba(11, 13, 17, 0.95) 30%, rgba(11, 13, 17, 0.4) 100%), url('${img.src}')`;
@@ -1171,8 +1190,9 @@
                 tryNext();
             }
 
-            setBackground(hero, 'obras1', 'https://images.unsplash.com/photo-1506974210756-8e1b8985d348?q=80&w=1600');
-            setBackground(bleed, 'foto2', 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000');
+            // Fondo del Hero usando obras1.png y fondo de logística usando tu foto real foto2.png
+            setBackground(hero, 'obras1', '.png', 'https://images.unsplash.com/photo-1506974210756-8e1b8985d348?q=80&w=1600');
+            setBackground(bleed, 'foto2', '.png', 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000');
         });
 
         // Inicializar ScrollReveal de forma fluida
@@ -1210,7 +1230,7 @@
 
         // ENVÍO DE FORMULARIO A WHATSAPP
         function sendQuoteToWhatsApp() {
-            const phone = "5491169859241"; // Tu número unificado
+            const phone = "5491169859241"; 
             
             const zona = document.getElementById('zona').value;
             const servicioPrincipal = document.getElementById('servicio-principal').value;
